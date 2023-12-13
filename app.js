@@ -98,62 +98,57 @@ aplicacao.post('/cadastrarUsuario', function(req, res) {
 // 
 
 // Verificacao de login
-aplicacao.post('/verificaLogin', function(req,res) {
-    console.log(yellowText("### VERIFICANDO BANCO DE DADOS "))
+aplicacao.post('/verificaLogin', async function(req, res) {
+    console.log("### VERIFICANDO BANCO DE DADOS ");
 
-    var emailLogin = req.body.emailLogin
-    var senhaLogin = req.body.senhaLogin 
-    var erros = []
+    var emailLogin = req.body.emailLogin;
+    var senhaLogin = req.body.senhaLogin;
+    var erros = [];
+
     // Validação dos campos
 
-    // // Verificando se nao esta com espaço vazio
-    if(emailLogin.length < 1 || emailLogin == undefined || emailLogin == null)
-    {
-        erros.push("Email Inválido")
+    if (!emailLogin || emailLogin.trim().length === 0) {
+        erros.push("Email Inválido");
     }
 
-    if(senhaLogin.length < 1 || senhaLogin == undefined || senhaLogin == null)
-    {
-        erros.push("Senha Inválida")
+    if (!senhaLogin || senhaLogin.trim().length === 0) {
+        erros.push("Senha Inválida");
     }
 
-    if (senhaLogin.length < 6)
-    {
-        erros.push("A senha deve conter no mínimo 6 digitos")
+    if (senhaLogin.length < 6) {
+        erros.push("A senha deve conter no mínimo 6 caracteres");
     }
 
-    if(erros.length > 0)
-    {
-        return res.render('../views/login.ejs', {erros : erros, emailLogin : emailLogin})
+    if (erros.length > 0) {
+        return res.render('../views/login.ejs', { erros: erros, emailLogin: emailLogin });
     }
 
     try {
-        bd_usuarios.findOne({ where: { email: emailLogin } }).then(tabelaUsuarios => {
-            if (tabelaUsuarios !== null) {
-                console.log(greenText("### USUARIO ENCONTRADO NO BANCO DE DADOS"));
-                
-                // Verificando se coincide
+        const tabelaUsuarios = await bd_usuarios.findOne({ where: { email: emailLogin } });
 
-                if(emailLogin === tabelaUsuarios.email && senhaLogin === tabelaUsuarios.senha)
-                {
-                    // Coincide
-                    console.log(greenText("###USUARIO LOGADO###"))
-                    res.send("USUARIO EXISTE NO BANCO DE DADOS")
-                } 
-            }  else {
-                console.log(redText("### USUARIO NAO ENCONTRADO NO BANCO DE DADOS ###"))
-                erros.push("Sem permissao. Usuario ou senha inválidos")
+        if (tabelaUsuarios) {
+            console.log("### USUARIO ENCONTRADO NO BANCO DE DADOS");
 
-                res.render('../views/login.ejs', {erros:erros, emailLogin : emailLogin})
+            // Verificando se coincide
+            if (emailLogin === tabelaUsuarios.email && senhaLogin === tabelaUsuarios.senha) {
+                console.log("### USUARIO LOGADO ###");
+                res.send("USUARIO EXISTE NO BANCO DE DADOS");
+            } else {
+                console.log("### USUARIO NAO ENCONTRADO NO BANCO DE DADOS ###");
+                erros.push("Sem permissão. Usuário ou senha inválidos");
+                res.render('../views/login.ejs', { erros: erros, emailLogin: emailLogin });
             }
-        }).catch(error => {
-            console.error(redText("Erro: " + error));
-        });
+        } else {
+            console.log("### USUARIO NAO ENCONTRADO NO BANCO DE DADOS ###");
+            erros.push("Sem permissão. Usuário ou senha inválidos");
+            res.render('../views/login.ejs', { erros: erros, emailLogin: emailLogin });
+        }
     } catch (error) {
-        console.error(redText("Erro no bloco try: " + error));
+        console.error("Erro:", error);
+        res.status(500).send("Erro interno no servidor");
     }
+});
 
-})
 
 
 aplicacao.post('/cadastrarPonto', function(req,res) {
