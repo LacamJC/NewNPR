@@ -71,7 +71,7 @@ aplicacao.post('/cadastrarUsuario', function(req, res) {
     if (senha != confirmaSenha) {
         console.log("SENHAS DIFERENTES ERRO")
         i = 1
-       return res.render('../views/cadastro/usuario.ejs', { i : i }); //Caso a senha seja diferente é retornado o erro
+       return res.render('../views/cadastro/usuario.ejs', { i : i, nome : nome, email : email, telefone : telefone }); //Caso a senha seja diferente é retornado o erro
     }
 
     // Criação do usuário no banco de dados caso esteja tudo certo
@@ -91,6 +91,63 @@ aplicacao.post('/cadastrarUsuario', function(req, res) {
 });
 // 
 
+// Verificacao de login
+aplicacao.post('/verificaLogin', function(req,res) {
+    console.log("### VERIFICANDO BANCO DE DADOS ")
+
+    var emailLogin = req.body.emailLogin
+    var senhaLogin = req.body.senhaLogin 
+    var erros = []
+    // Validação dos campos
+
+    // // Verificando se nao esta com espaço vazio
+    if(emailLogin.length < 1 || emailLogin == undefined || emailLogin == null)
+    {
+        erros.push("Email Inválido")
+    }
+
+    if(senhaLogin.length < 1 || senhaLogin == undefined || senhaLogin == null)
+    {
+        erros.push("Senha Inválida")
+    }
+
+    if (senhaLogin.length < 6)
+    {
+        erros.push("A senha deve conter no mínimo 6 digitos")
+    }
+
+    if(erros.length > 0)
+    {
+        console.log(erros)
+        return res.render('../views/login.ejs')
+    }
+
+    try {
+        bd_usuarios.findOne({ where: { email: emailLogin } }).then(tabelaUsuarios => {
+            if (tabelaUsuarios !== null) {
+                console.log("### USUARIO ENCONTRADO NO BANCO DE DADOS");
+                
+                // Verificando se coincide
+
+                if(emailLogin === tabelaUsuarios.email & senhaLogin === tabelaUsuarios.senha)
+                {
+                    // Coincide
+                    console.log("###USUARIO LOGADO###")
+                    res.send("USUARIO EXISTE NO BANCO DE DADOS")
+                } else 
+                {
+                    erros.push("Sem permissao. Usuario ou senha inválidos")
+                }
+                
+            }
+        }).catch(error => {
+            console.error("Erro: " + error);
+        });
+    } catch (error) {
+        console.error("Erro no bloco try: " + error);
+    }
+
+})
 
 /* servidor web fica na escuta da solicitação do cliente (computador q possui navegador) na  porta 3000 */
 aplicacao.listen(3000, function(req, res) {

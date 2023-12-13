@@ -31,11 +31,11 @@ const bd_usuarios = database.define('bd_usuarios', {
     },
 
     adm: {
-        type: Sequelize.STRING(1)
+        type: Sequelize.STRING
     }
 
 })
 
-bd_usuarios.sync({force:true})
+// bd_usuarios.sync({force:true})
 
 module.exports = bd_usuarios

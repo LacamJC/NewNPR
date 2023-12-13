@@ -11,8 +11,15 @@ router.get('/mapa', function(req,res ){
 }) 
 
 var i;
+var nome = ""
+var email = ""
+var telefone = ""
 router.get('/cadastroUsuario', function (req,res ){
-    res.render('../views/cadastro/usuario.ejs', {i : i})
+    res.render('../views/cadastro/usuario.ejs', {i : i, nome : nome, email : email, telefone : telefone})
+})
+
+router.get('/login', function(req,res) {
+    res.render('../views/login.ejs')
 })
 
 
