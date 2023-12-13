@@ -24,7 +24,7 @@ campoCPF.addEventListener('input', () => {
     }
 });
 
-const campoCEP = document.getElementById('floatingCep')
+const campoCEP = document.getElementById('formCEP')
 
 campoCEP.addEventListener('input', () => {
     console.log("MASCARA DO CEP EM")

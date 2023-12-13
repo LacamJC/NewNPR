@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>NPR - Cadastro Ponto</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   </head>
   <body>
@@ -46,47 +47,52 @@
       </div>
 
     </nav>
-
-    <form class="container  m-auto" style="max-width: 750px; ">
+    <%var controle = 0 %>
+    <form action="/cadastrarPonto" method="post" class="container  m-auto border border-secondary p-4 bg-light mx-auto my-4" style="max-width: 750px; ">
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Email</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <input type="email" class="form-control" id="exampleInputEmail1" name="textEmail" aria-describedby="emailHelp">
         <div id="emailHelp" class="form-text">Lembre-se que para enviar um ponto para analise, é necessario ter cadastro no sistema</div>
       </div>
       <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">Senha</label>
-        <input type="password" class="form-control" id="exampleInputPassword1">
+        <input type="password" class="form-control" id="exampleInputPassword1" name="textPassword">
       </div>
 
-      <div class="mb-3">
-        <label for="exampleInput" class="form-label">Nome da instituição</label>
-        <input type="text" name="" id="exampleInput" class="form-control">
+      <div class="row">
+        <div class="mb-3 col col-12 col-md-6">
+          <label for="exampleInput" class="form-label">Nome da instituição</label>
+          <input type="text" name="textInstituicao" id="exampleInput" class="form-control">
+        </div>
+        <div class="mb-3 col col-12 col-md-6">
+          <label for="formCEP" class="form-label">CEP</label>
+          <input type="text" name="textCep" id="formCEP" class="form-control" maxlength="9" onblur="consultarCEP()">
+          <div class="form-text alert alert-danger opacity-0" id="erroCEP">
+            CEP INVALIDO
+          </div>
+        </div>
       </div>
 
-      <div class="mb-3">
-        <label for="exampleCEP" class="form-label">CEP</label>
-        <input type="text" name="" id="exampleCEP" class="form-control" maxlength="9">
-      </div>
-
-      <div class="mb-3">
-        <label for="" class="form-label">
-          Cidade
-        </label>
-        <input type="text" name="" id="" class="form-control" readonly>
-      </div>
-
-      <div class="mb-3">
-        <label for="" class="form-label">
-          Bairro
-        </label>
-        <input type="text" name="" id="" class="form-control" readonly>
+      <div class="row">
+        <div class="mb-3 col col-6">
+          <label for="" class="form-label">
+            Cidade
+          </label>
+          <input type="text" name="textCidade" id="axiosCidade" class="form-control" readonly>
+        </div>
+        <div class="mb-3 col col-6">
+          <label for="" class="form-label">
+            Bairro
+          </label>
+          <input type="text" name="textBairro" id="axiosBairro" class="form-control" readonly>
+        </div>
       </div>
 
       <div class="mb-3">
         <label for="" class="form-label">
           Rua
         </label>
-        <input type="text" name="" id="" class="form-control" readonly>
+        <input type="text" name="textRua" id="axiosRua" class="form-control" readonly>
       </div>
 
       <div class="mb-3">
@@ -94,7 +100,7 @@
           Selecione uma foto para o perfil<span class="bg-warning p-1 rounded">(Utilize o link de uma imagem)</span>
         </label>
         
-        <input type="file" name="" id="" class="form-control">
+        <input type="text" name="textFoto" id="" class="form-control">
       </div>
 
       <div class="mb-3">
@@ -122,7 +128,7 @@
         <label for="exampleTextarea" class="form-label">Descrição do ponto</label>
         <div class="form-text">Coloque na descrição o objetivo da empresa</div>
         <div class="form-floating m-4 ">
-          <textarea name="enderecoPontoDescricao" id="exampleTextarea" cols="60" rows="10" class="form-control" placeholder="Descrição do Ponto" style="height: 200px;"></textarea>
+          <textarea name="textDescricao" id="exampleTextarea" cols="60" rows="10" class="form-control" placeholder="Descrição do Ponto" style="height: 200px;"></textarea>
         
       </div>
       </div>
@@ -131,7 +137,64 @@
     </form>
 
 
-    
+    <script>
+
+            const campoCEP = document.getElementById('formCEP')
+
+            campoCEP.addEventListener('input', () => {
+                console.log("MASCARA DO CEP EM")
+                let value = campoCEP.value.replace(/\D/g, ''); // Remove caracteres não numéricos
+
+                if (value.length === 8) {
+                    campoCEP.value = value.replace(/(\d{5})(\d{3})/, '$1-$2');
+                }
+            });
+            
+           
+           
+      function consultarCEP() {
+
+      const cep = campoCEP.value.replace('-','');
+      console.log(cep)
+      console.log("Procurando cep")
+      console.log(`https://viacep.com.br/ws/${cep}/json/`)
+
+      if (cep.length === 8) {
+      axios.get(`https://viacep.com.br/ws/${cep}/json/`)
+          .then(response => {
+              const endereco = response.data;
+              if (endereco.erro) {
+                  console.log('CEP não encontrado');
+                  
+                  document.getElementById("erroCEP").classList.remove('opacity-0')
+                  document.getElementById('erroCEP').classList.add('opacity-100')
+              } else {
+                  console.log(endereco)
+                  document.getElementById("erroCEP").classList.remove('opacity-100')
+                  document.getElementById('erroCEP').classList.add('opacity-0')
+                  // document.getElementById("cepInvalido").innerHTML = ""
+                  document.getElementById('axiosRua').value = endereco.logradouro;
+                  document.getElementById('axiosBairro').value = endereco.bairro;
+                  document.getElementById('axiosCidade').value = endereco.localidade;
+                  // Preencha outros campos de endereço que você deseja exibir
+              }
+          })
+          .catch(error => {
+              console.log('Erro ao consultar o CEP:', error);
+          });
+      } 
+      else if(cep.length < 7)
+      {
+      document.getElementById("cepInvalido").innerHTML = ""
+                  document.getElementById('floatingInput_rua').value = "";
+                  document.getElementById('floatingInput_bairro').value = "";
+                  document.getElementById('floatingInput_cidade').value = "";
+                  console.log("CEP INVALIDO")
+      }
+      }
+    </script>
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   </body>
 </html>
