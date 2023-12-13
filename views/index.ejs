@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  </head>
+  <body>
+<!--BARRA DE NAVEGAÇÃO-->
+          <nav class="navbar navbar-expand-lg bg-body-tertiary bg-warning"> 
+            <div class="container-fluid" role="navigation">
+              <a class="navbar-brand" href="#">
+                <img src="img/logotipo.svg" alt="Logotipo NPR" width="50" height="50" style="    transform: scale(2.5);
+                margin-left: 30px; margin-right: 30px;
+            ">
+              </a>
+
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link" href="/mapa">Mapa</a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link" href="/cadastroUsuario">Cadastro</a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link disabled" aria-disabled="true">Pontos de coleta</a>
+                  </li>
+
+                </ul>
+
+              </div>
+
+            </div>
+
+          </nav>
+
+          <main class="container-sm bg-success pm-5" style="max-width: 920px; padding: 0px;">                
+
+            <section class="my-3 mb-3 row pb-3 p-3">
+                <article class="col col-12 col-md-6">
+                    <h1>Natureza Prioridade Renovada </h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam neque cupiditate ad porro enim labore cumque veritatis quisquam exercitationem quasi hic maiores esse libero voluptatibus dolorem ipsa, ex fugiat pariatur? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis aliquid nulla totam eos asperiores dolor quia placeat provident illum esse recusandae nam fuga consequuntur sequi perferendis nostrum, sint alias. Reprehenderit!</p>
+                </article>
+
+                <img src="img/logotipo.svg" alt="" class="col col-4 bg-light rounded mx-auto d-block">
+            </section>
+            <aside class="row gap-2 bg-light" style="margin: auto; width: 100%;">
+                <div class="card col col-4 " style="width: 18rem;  margin: auto;">
+                    <img src="img/caminhao.png" class="card-img-top" alt="..." style="width: 80px;
+                    margin: auto;">
+                    <div class="card-body">
+                      <h5 class="card-title">Visite nosso Mapa</h5>
+                      <p class="card-text">Nele você encontrará pontos de coletas cadastrados por nossos parceiros</p>
+                      <a href="#" class="btn btn-primary">Ir para Mapa</a>
+                    </div>
+                  </div>
+
+                  <div class="card col col-4 " style="width: 18rem; margin: auto;">
+                    <img src="img/reciclagem.jpg" class="card-img-top" alt="..." style="width: 80px;
+                    margin: auto;">
+                    <div class="card-body">
+                      <h5 class="card-title">Faça seu cadastro</h5>
+                      <p class="card-text">Para enviar pontos de coleta em potencial, faça seu cadastro e avaliaremos em breve.</p>
+                      <a href="#" class="btn btn-primary" >Fazer cadastro</a>
+                    </div>
+                  </div>
+                  
+                  <div class="card col col-4 " style="width: 18rem; margin: auto;">
+                    <img src="img/icons/email.png" class="card-img-top" alt="..." style="width: 80px;
+                    margin: auto;">
+                    <div class="card-body">
+                      <h5 class="card-title">Deixa seu Feedback</h5>
+                      <p class="card-text">Deixa seu Feedback para possiveis melhorias ou para informar bugs na aplicação</p>
+                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#EnviarFeedback">Enviar Feedback</button>
+                    </div>
+                  </div>
+            </aside>
+      
+        </main>
+
+        <!-- 
+            MODAL
+         -->
+
+  
+  <!-- Modal -->
+<form action="/comentar" method="post">
+  <div class="modal fade" id="EnviarFeedback" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Escreva seu Feedback</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            
+                <div class="form-floating">
+                <textarea name="textoComentario" id="floatingFeedback" class="form-control" placeholder="Escreva Seu Feedback aqui" cols="30" rows="15" style="height: 200px;"></textarea>
+                <label for="floatingFeedback">Escreva Seu Feedback Aqui</label>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          
+          <input type="submit" value="Enviar" class="btn btn-primary">
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+         <!--  -->
+        <footer>
+            <nav class="container text-center ">
+                <ul class="list-group list-group-flush ">
+                    <li class="list-group-item">
+                        <a href="https://www.flaticon.com/br/icones-gratis/enviar" title="enviar ícones" target="_blank">Atribuição - Enviar ícones criados por Freepik - Flaticon</a>
+                    </li>
+                    <li class="list-group-item">Email para contato: npr.contato@gmail.com</li>
+
+                    <li class="list-group-item">Email para dúvidas: npr.duvidas@gmail.com</li>
+                    
+                    <li class="list-group-item">Redes Sociais</li>
+            
+                    <li class="list-group-item">
+                        <a href="#" target="_blank">
+                            <img src="img/icons/facebook.png" alt="" id="icon" width="50px">
+                        </a>
+                        <a href="#" target="_blank">
+                            <img src="img/icons/twitter.png" alt="" id="" width="50px">
+                        </a>
+                        <a href="https://www.instagram.com/n.p.r.brasilsp/" target="_blank">
+                            <img src="img/icons/instagram (2).png" alt="" id="" width="50px">
+                        </a>
+                    </li>
+         
+                </ul>
+            </nav>
+          </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>
