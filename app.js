@@ -119,7 +119,7 @@ aplicacao.post('/verificaLogin', function(req,res) {
     if(erros.length > 0)
     {
         console.log(erros)
-        return res.render('../views/login.ejs')
+        return res.render('../views/login.ejs', {erros : erros, emailLogin : emailLogin})
     }
 
     try {
@@ -134,11 +134,12 @@ aplicacao.post('/verificaLogin', function(req,res) {
                     // Coincide
                     console.log("###USUARIO LOGADO###")
                     res.send("USUARIO EXISTE NO BANCO DE DADOS")
-                } else 
-                {
-                    erros.push("Sem permissao. Usuario ou senha inválidos")
-                }
-                
+                } 
+            }  else {
+                console.log("### USUARIO NAO ENCONTRADO NO BANCO DE DADOS ###")
+                erros.push("Sem permissao. Usuario ou senha inválidos")
+
+                res.render('../views/login.ejs', {erros:erros, emailLogin : emailLogin})
             }
         }).catch(error => {
             console.error("Erro: " + error);

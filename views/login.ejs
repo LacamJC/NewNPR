@@ -55,14 +55,23 @@
             <form action="/verificaLogin" method="post" class="container w-50 my-5 bg-body-tertiary border border-success border-2 p-5 rounded">
                 <h2 class="text-center">Login</h2>
                 <div class="form-floating mb-3">
-                    <input type="email" class="form-control" id="floatingInput" placeholder="Coloque seu email" name="emailLogin" required>
+                    <input type="email" class="form-control" id="floatingInput" placeholder="Coloque seu email" name="emailLogin" required value="<%=emailLogin%>">
                     <label for="floatingInput">Coloque seu email</label>
                   </div>
                   <div class="form-floating">
                     <input type="password" class="form-control" name="senhaLogin" id="floatingPassword" placeholder="Coloque sua senha" required> 
                     <label for="floatingPassword">Coloque sua senha</label>
                   </div>
-                <br>
+
+                <%if(erros.length > 0){
+                    for(i=0;i < erros.length;i++){%>
+
+                        <div class="alert alert-danger">
+                            <%=erros[i]%>
+                        </div>
+
+                        <% }
+                }%>
              
     
             <input type="submit" value="Entrar" class="btn btn-primary btn-md">
