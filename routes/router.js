@@ -18,12 +18,17 @@ router.get('/cadastroUsuario', function (req,res ){
     res.render('../views/cadastro/usuario.ejs', {i : i, nome : nome, email : email, telefone : telefone})
 })
 
+router.get('/cadastroPonto', function(req,res) {
+    res.render('../views/cadastro/ponto.ejs')
+})
+
 
 erros = []
 emailLogin = ""
 router.get('/login', function(req,res) {
     res.render('../views/login.ejs', {erros : erros, emailLogin : emailLogin})
 })
+
 
 
 module.exports = router
