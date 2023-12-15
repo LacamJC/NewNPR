@@ -165,6 +165,18 @@ aplicacao.post('/cadastrarPonto', function(req,res) {
     var bairro =  req.body.textBairro
     var rua = req.body.textRua
 
+    // Configuracao dos tipos de ponto
+
+    var eletronico = req.body.lixoEletronico
+    var reciclavel = req.body.lixoReciclavel 
+    var oleo = req.body.lixoOleo
+    var organico = req.body.lixoOrganico
+
+    console.log(`Eletronico: ${eletronico}`)
+    console.log(`Reciclavel: ${reciclavel}`)
+    console.log(`Oleo: ${oleo}`)
+    console.log(`Organico ${organico}`)
+
     // console.log(`EMAIL : ${emailUsuario}`)
     // console.log(`SENHA : ${senhaUsuario}`)
     // console.log(`INSTITUICAO : ${nomeInstituicao}`)
