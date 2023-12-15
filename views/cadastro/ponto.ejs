@@ -51,22 +51,22 @@
     <form action="/cadastrarPonto" method="post" class="container  m-auto border border-secondary p-4 bg-light mx-auto my-4" style="max-width: 750px; ">
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Email</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" name="textEmail" aria-describedby="emailHelp">
+        <input type="email" class="form-control" id="exampleInputEmail1" name="textEmail" aria-describedby="emailHelp" required>
         <div id="emailHelp" class="form-text">Lembre-se que para enviar um ponto para analise, é necessario ter cadastro no sistema</div>
       </div>
       <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">Senha</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" name="textPassword">
+        <input type="password" class="form-control" id="exampleInputPassword1" name="textPassword" required>
       </div>
-
+      <%if(usuarioNao != ""){%> <div class="alert alert-danger"><%=usuarioNao%> ou faça seu cadastro <a href="/cadastroUsuario">clicando aqui</a></div> <%}%>
       <div class="row">
         <div class="mb-3 col col-12 col-md-6">
           <label for="exampleInput" class="form-label">Nome da instituição</label>
-          <input type="text" name="textInstituicao" id="exampleInput" class="form-control">
+          <input type="text" name="textInstituicao" id="exampleInput" class="form-control" required>
         </div>
         <div class="mb-3 col col-12 col-md-6">
           <label for="formCEP" class="form-label">CEP</label>
-          <input type="text" name="textCep" id="formCEP" class="form-control" maxlength="9" onblur="consultarCEP()">
+          <input type="text" name="textCep" id="formCEP" class="form-control" maxlength="9" onblur="consultarCEP()" required>
           <div class="form-text alert alert-danger opacity-0" id="erroCEP">
             CEP INVALIDO
           </div>
@@ -128,12 +128,17 @@
         <label for="exampleTextarea" class="form-label">Descrição do ponto</label>
         <div class="form-text">Coloque na descrição o objetivo da empresa</div>
         <div class="form-floating m-4 ">
-          <textarea name="textDescricao" id="exampleTextarea" cols="60" rows="10" class="form-control" placeholder="Descrição do Ponto" style="height: 200px;"></textarea>
+          <textarea name="textDescricao" id="exampleTextarea" cols="60" rows="10" class="form-control" placeholder="Descrição do Ponto" style="height: 200px;" required></textarea>
         
       </div>
       </div>
 
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <div class="alert alert-info">
+        O seu cadastro será enviado para análise, não será incluido automaticamente no mapa.
+        iremos analisar o mais rapido possivel para assim colocar o seu cadastro no mapa.
+        Obrigado pela sua contribuição !
+      </div>
+      <button type="submit" class="btn btn-primary">Enviar para análise</button>
     </form>
 
 

@@ -161,6 +161,8 @@ aplicacao.post('/cadastrarPonto', function(req,res) {
     var foto = req.body.textFoto
     var descricao = req.body.textDescricao
     var tipo = []
+    
+    var usuarioNao = "Usuario nao encontrado, verifique o email ou a senha"
 
     var cidade =req.body.textCidade
     var bairro =  req.body.textBairro
@@ -198,7 +200,7 @@ aplicacao.post('/cadastrarPonto', function(req,res) {
                 // console.log(`DESCRICAO : ${descricao}`)
                 // console.log(`FOTO : ${foto}`)
               // Criando nova coluna nos pontos de coleta
-            
+                tipo.length == 0 ? tipo.push("TIPO NÃO ESPECIFICADO") : false
                   bd_pontos.create({
                     email_usuario : emailUsuario,
                     nome_instituicao : nomeInstituicao,
@@ -211,16 +213,18 @@ aplicacao.post('/cadastrarPonto', function(req,res) {
                     tipo : tipo
                 })
                 console.log(greenText(`### PONTO DE COLETA ${nomeInstituicao} CADASTRADO ###`))
+                res.send("FUNCIONA")
         } else 
         {
             console.log(redText("### USUARIO NAO ENCONTRADO ###"))
+            
+            res.render('../views/cadastro/ponto.ejs', {usuarioNao : usuarioNao})
         }
     })
     // 
 
 
 
-    res.send("FUNCIONA")
 })
 /* servidor web fica na escuta da solicitação do cliente (computador q possui navegador) na  porta 3000 */
 aplicacao.listen(3000, function(req, res) {

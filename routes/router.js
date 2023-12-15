@@ -18,8 +18,10 @@ router.get('/cadastroUsuario', function (req,res ){
     res.render('../views/cadastro/usuario.ejs', {i : i, nome : nome, email : email, telefone : telefone})
 })
 
+
+var usuarioNao = ""
 router.get('/cadastroPonto', function(req,res) {
-    res.render('../views/cadastro/ponto.ejs')
+    res.render('../views/cadastro/ponto.ejs', {usuarioNao : usuarioNao})
 })
 
 
