@@ -160,6 +160,7 @@ aplicacao.post('/cadastrarPonto', function(req,res) {
     var cep = req.body.textCep
     var foto = req.body.textFoto
     var descricao = req.body.textDescricao
+    var tipo = []
 
     var cidade =req.body.textCidade
     var bairro =  req.body.textBairro
@@ -167,15 +168,15 @@ aplicacao.post('/cadastrarPonto', function(req,res) {
 
     // Configuracao dos tipos de ponto
 
-    var eletronico = req.body.lixoEletronico
-    var reciclavel = req.body.lixoReciclavel 
-    var oleo = req.body.lixoOleo
-    var organico = req.body.lixoOrganico
+        var eletronico = req.body.lixoEletronico
+        var reciclavel = req.body.lixoReciclavel 
+        var oleo = req.body.lixoOleo
+        var organico = req.body.lixoOrganico
 
-    console.log(`Eletronico: ${eletronico}`)
-    console.log(`Reciclavel: ${reciclavel}`)
-    console.log(`Oleo: ${oleo}`)
-    console.log(`Organico ${organico}`)
+        eletronico === "on" ? tipo.push("Eletrônico") : false
+        reciclavel === "on" ? tipo.push("Reciclável") : false 
+        oleo === "on" ? tipo.push("Óleo") : false 
+        organico === "on" ? tipo.push("Orgânico") : false 
 
     // console.log(`EMAIL : ${emailUsuario}`)
     // console.log(`SENHA : ${senhaUsuario}`)
@@ -206,7 +207,8 @@ aplicacao.post('/cadastrarPonto', function(req,res) {
                     bairro : bairro,
                     rua : rua,
                     foto : foto,
-                    descricao : descricao 
+                    descricao : descricao,
+                    tipo : tipo
                 })
                 console.log(greenText(`### PONTO DE COLETA ${nomeInstituicao} CADASTRADO ###`))
         } else 

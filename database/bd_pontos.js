@@ -46,7 +46,11 @@ const bd_pontos = database.define('bd_pontos', {
     descricao:
     {
         type:Sequelize.TEXT
-    }
+    },
+    tipo: {
+        type: Sequelize.JSON,
+
+      },
 })
 
 bd_pontos.sync({force:true})
