@@ -29,6 +29,10 @@ router.get('/login', function(req,res) {
     res.render('../views/login.ejs', {erros : erros, emailLogin : emailLogin})
 })
 
+router.get('/listaPontos', function(req,res) {
+    res.render('../views/pontosDeColeta/lista.ejs')
+})
+
 
 
 module.exports = router

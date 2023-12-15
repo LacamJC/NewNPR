@@ -209,16 +209,16 @@ aplicacao.post('/cadastrarPonto', function(req,res) {
     res.send("FUNCIONA")
 })
 /* servidor web fica na escuta da solicitação do cliente (computador q possui navegador) na  porta 3000 */
-// aplicacao.listen(3000, function(req, res) {
-//     console.log(greenText("##########"))
-//     console.log(greenText("Servidos aberto"))
-//     console.log(greenText("##########"))
-// })
+aplicacao.listen(3000, function(req, res) {
+    console.log(greenText("##########"))
+    console.log(greenText("Servidos aberto"))
+    console.log(greenText("##########"))
+})
 
 //Use PORT provided in environment or default to 3000
-const port = process.env.PORT || 3000;
+// const port = process.env.PORT || 3000;
 
 // Listen on `port` and 0.0.0.0
-aplicacao.listen(port, "0.0.0.0", function () {
-  console.log("SERVER OPEN")
-});
+// aplicacao.listen(port, "0.0.0.0", function () {
+//   console.log("SERVER OPEN")
+// });
