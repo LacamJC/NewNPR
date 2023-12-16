@@ -35,8 +35,11 @@ router.get('/listaPontos', function(req,res) {
     res.render('../views/pontosDeColeta/lista.ejs')
 })
 
+var sendNome = ""
+var sendEmail = ""
+var sendTel = ""
 router.get('/usuarioPerfil', function(req,res) {
-    res.render('../views/usuarios/perfil.ejs')
+    res.render('../views/usuarios/perfil.ejs', {sendNome : sendNome, sendEmail : sendEmail, sendTel : sendTel})
 })
 
 module.exports = router

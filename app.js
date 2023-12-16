@@ -132,7 +132,16 @@ aplicacao.post('/verificaLogin', async function(req, res) {
             // Verificando se coincide
             if (emailLogin === tabelaUsuarios.email && senhaLogin === tabelaUsuarios.senha) {
                 console.log("### USUARIO LOGADO ###");
-                res.send("USUARIO EXISTE NO BANCO DE DADOS");
+                // res.send("USUARIO EXISTE NO BANCO DE DADOS");
+
+                var sendNome = tabelaUsuarios.nome
+                var sendEmail = tabelaUsuarios.email
+                var sendTel = tabelaUsuarios.telefone
+
+                console.log(`Nome : ${sendNome}`)
+                console.log(`Email : ${sendEmail}`)
+                console.log(`Telefone : ${sendTel}`)
+                res.render('../views/usuarios/perfil.ejs', {sendNome : sendNome, sendEmail : sendEmail, sendTel : sendTel})
             } else {
                 console.log("### USUARIO NAO ENCONTRADO NO BANCO DE DADOS ###");
                 erros.push("Sem permissão. Usuário ou senha inválidos");
