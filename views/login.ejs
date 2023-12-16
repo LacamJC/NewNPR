@@ -52,16 +52,19 @@
 
 
 
-            <form action="/verificaLogin" method="post" class="container w-50 my-5 bg-body-tertiary border border-success border-2 p-5 rounded">
+            <form action="/verificaLogin" method="post" class="container my-5 bg-body-tertiary border border-success border-2 p-5 rounded" style="max-width: 600px;">
                 <h2 class="text-center">Login</h2>
                 <div class="form-floating mb-3">
                     <input type="email" class="form-control" id="floatingInput" placeholder="Coloque seu email" name="emailLogin" required value="<%=emailLogin%>">
                     <label for="floatingInput">Coloque seu email</label>
                   </div>
-                  <div class="form-floating">
+                  <div class="form-floating mb-3">
                     <input type="password" class="form-control" name="senhaLogin" id="floatingPassword" placeholder="Coloque sua senha" required minlength="6"> 
                     <label for="floatingPassword">Coloque sua senha</label>
                   </div>
+                  <div class="form-text">
+                    <p>Não possui uma conta ? <a href="/cadastroUsuario">Cadastre-se clicando aqui</a></p>
+                </div>
 
                 <%if(erros.length > 0){
                     for(i=0;i < erros.length;i++){%>
@@ -76,10 +79,10 @@
     
             <input type="submit" value="Entrar" class="btn btn-primary btn-md">
             
-            <!-- <a href="/"><button id="Entrarbotao" style="font-weight: bold;">Entrar</button></a> -->
+            
     
          
-            <a href="/cadastroUsuario" class="btn btn-warning">Cadastre-se</a>
+        
         </form>
     
 

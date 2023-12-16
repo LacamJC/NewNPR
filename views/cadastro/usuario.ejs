@@ -46,11 +46,11 @@
     </div>
   </nav>
 
-  <main class="container-md bg-danger pm-5" style=" padding: 0px;">
+  <main class="container-md  pm-5" style=" padding: 0px;">
     <!--  -->
     <!--  -->
 
-    <div class="row">
+    <div class="row w-100">
         <form method="post" action="/cadastrarUsuario" class="col col-10 border border-secondary p-4 bg-light mx-auto my-4">
           
             <h1>Cadastro para novo Usuário</h1>
@@ -70,8 +70,8 @@
                 <label for="FloatingTel">Telefone</label>
             </div>
 
-            <div class="row">
-                <div class="form-floating  p-1 col">
+            <div class="row m-1">
+                <div class="form-floating  p-1 col col-12 col-md-6">
                     <input type="password" name="senhaUsuario" id="FloatingPassword" class="form-control" placeholder="Senha" autocomplete="off" minlength="6" required>
                     <label for="FloatingPassword">Senha</label>
                 </div>
@@ -96,9 +96,9 @@
                 <input type="file" name="fotoUsuario" id="formFile" class="form-control">
             </div>
 
-            <div class="row">
-                <input type="submit" value="Cadastrar" class="btn btn-outline-primary m-2 p-2 col col-4">
-                <a href="/" class="btn btn-outline-danger m-2 p-2 col col-2">Cancelar</a>
+            <div class="mb-3">
+                <input type="submit" value="Cadastrar" class="btn btn-outline-primary m-2 p-2 ">
+                <a href="/" class="btn btn-outline-danger m-2 p-2 ">Cancelar</a>
             </div>
         </form>
       
