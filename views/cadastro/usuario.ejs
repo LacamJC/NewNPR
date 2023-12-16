@@ -64,7 +64,14 @@
             <div class="form-floating m-2">
                 <input type="email" name="emailUsuario" id="FloatingEmail" class="form-control" placeholder="Email" value="<%=email%>"required >
                 <label for="FloatingEmail">Email</label>
+
             </div>
+            <%if(e==1){%>
+                <div class="alert alert-danger">
+                    Email já cadastrado no sistema !
+                </div>
+                <%}%>
+
 
             <div class="form-floating m-2 " >
                 <input type="text" name="telefoneUsuario" id="FloatingTel" class="form-control" placeholder="Telefone"  maxlength="15" value="<%=telefone%>" required >
@@ -82,9 +89,9 @@
                 </div>
           
                 <%if(i==1){%>
-                <span class="alert alert-danger">
+                <div class="alert alert-danger">
                     Senhas diferentes !
-                </span>
+                </div>
                 <%}%>
                 <div class="form-check mb-3">
                     <input type="checkbox" name="" id="ocultarSenha" class="form-check-input">

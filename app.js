@@ -67,6 +67,8 @@ aplicacao.post('/cadastrarUsuario', function(req, res) {
     var senha = req.body.senhaUsuario;
     var confirmaSenha = req.body.confirmaSenha;
     var foto = req.body.fotoUsuario;
+    var i = 0
+    var e = 0 
 
     console.log(`NOME : ${nome}`);
     console.log(`EMAIL : ${email}`);
@@ -77,7 +79,7 @@ aplicacao.post('/cadastrarUsuario', function(req, res) {
     // Autenticação de senha
     if (senha != confirmaSenha) {
         i = 1
-       return res.render('../views/cadastro/usuario.ejs', { i : i, nome : nome, email : email, telefone : telefone }); //Caso a senha seja diferente é retornado o erro
+       return res.render('../views/cadastro/usuario.ejs', {e : e, i : i, nome : nome, email : email, telefone : telefone }); //Caso a senha seja diferente é retornado o erro
     }
 
     // Verificando se o email já nao esta cadastrado
@@ -86,8 +88,9 @@ aplicacao.post('/cadastrarUsuario', function(req, res) {
         if(tabelaUsuarios) // Se existe o email no sistema
         {
             console.log(yellowText("EMAIL JA CADASTRADO NO SISTEMA"))
+            e = 1
 
-            res.render('../views/cadastro/usuario.ejs')
+            res.render('../views/cadastro/usuario.ejs', {e:e, i : i,nome : nome, email : email, telefone : telefone})
         } else ( // se nao
             console.log(yellowText("EMAIL NAO CADASTRADO NO SISTEMA"))
         )
