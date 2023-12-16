@@ -80,10 +80,19 @@ aplicacao.post('/cadastrarUsuario', function(req, res) {
        return res.render('../views/cadastro/usuario.ejs', { i : i, nome : nome, email : email, telefone : telefone }); //Caso a senha seja diferente é retornado o erro
     }
 
-    const tabelaUsuarios = bd_usuarios.findOne({where : {email : email}});
-    console.log("#!@#!#!@#!@!@!@#!")
-    console.log(tabelaUsuarios)
+    // Verificando se o email já nao esta cadastrado
+    
+    bd_usuarios.findOne({where : {email : email}}).then(tabelaUsuarios =>{
+        if(tabelaUsuarios) // Se existe o email no sistema
+        {
+            console.log(yellowText("EMAIL JA CADASTRADO NO SISTEMA"))
 
+            res.render('../views/cadastro/usuario.ejs')
+        } else ( // se nao
+            console.log(yellowText("EMAIL NAO CADASTRADO NO SISTEMA"))
+        )
+    })
+    
     // Criação do usuário no banco de dados caso esteja tudo certo
     bd_usuarios.create({
         nome: nome,
