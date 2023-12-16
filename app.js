@@ -80,6 +80,10 @@ aplicacao.post('/cadastrarUsuario', function(req, res) {
        return res.render('../views/cadastro/usuario.ejs', { i : i, nome : nome, email : email, telefone : telefone }); //Caso a senha seja diferente é retornado o erro
     }
 
+    const tabelaUsuarios = bd_usuarios.findOne({where : {email : email}});
+    console.log("#!@#!#!@#!@!@!@#!")
+    console.log(tabelaUsuarios)
+
     // Criação do usuário no banco de dados caso esteja tudo certo
     bd_usuarios.create({
         nome: nome,
