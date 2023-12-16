@@ -35,6 +35,8 @@ router.get('/listaPontos', function(req,res) {
     res.render('../views/pontosDeColeta/lista.ejs')
 })
 
-
+router.get('/usuarioPerfil', function(req,res) {
+    res.render('../views/usuarios/perfil.ejs')
+})
 
 module.exports = router
