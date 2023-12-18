@@ -52,12 +52,17 @@
             <h2>Alterar Email</h2>
 
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="emailAtual" name="emailAtual" placeholder="Email Atual" value="<%=emailAtual%>">
+                <input type="text" class="form-control" id="emailAtual" name="emailAtual" placeholder="Email Atual" value="<%=emailAtual%>" readonly>
                 <label for="emailAtual">Email Atual</label>
               </div>
               <div class="form-floating mb-3">
                 <input type="text" class="form-control" id="emailNovo" name="emailNovo" placeholder="Email novo">
                 <label for="emailNovo">Email novo</label>
+              </div>
+
+              <div class="form-floating mb-3">
+                <input type="password" class="form-control" name="senha" id="floatingPassword" placeholder="Coloque sua senha" required minlength="6"> 
+                <label for="floatingPassword">Coloque sua senha</label>
               </div>
 
               <input type="submit" value="Alterar" class="btn btn-primary">

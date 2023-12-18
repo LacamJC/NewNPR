@@ -264,10 +264,30 @@ aplicacao.post('/alterarEmailConfirm', function(req,res) {
 
     var emailAtual = req.body.emailAtual 
     var emailNovo = req.body.emailNovo
+    var senhaUsuario = req.body.senha 
 
+    console.log(`Senha de usuario: ${senhaUsuario}`)
     console.log(`Email atual : ${emailAtual}`)
 
     console.log(`Email atual : ${emailNovo}`)
+
+    
+
+    bd_usuarios.findOne({where : {email : emailAtual, senha : senhaUsuario}}).then(tabelaUsuarios => {
+        if(tabelaUsuarios)
+        {
+            tabelaUsuarios.update({ email : emailNovo}).then(() => {
+                console.log(greenText("### EMAIL ALTERADO COM SUCESSO ###"))
+                res.send("Email alterado")
+            }).catch(error => {
+                console.error(redText("Erro ao alterar email"))
+            })
+        } else 
+        {
+            console.log(redText("USUARIO NAO ENCONTRADO OU SENHA INCORRETA"))
+        }
+
+    })
 })
 
 /* servidor web fica na escuta da solicitação do cliente (computador q possui navegador) na  porta 3000 */
