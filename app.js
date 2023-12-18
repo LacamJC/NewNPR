@@ -251,6 +251,25 @@ aplicacao.post('/cadastrarPonto', function(req,res) {
 
 
 })
+
+aplicacao.post('/alterarEmail', function(req, res) {
+    console.log(yellowText("ALTERANDO EMAIL"))
+
+    var emailAtual = req.body.emailAtual 
+    res.render('../views/usuarios/alterar/email.ejs', {emailAtual : emailAtual})
+})
+
+aplicacao.post('/alterarEmailConfirm', function(req,res) {
+    console.log(yellowText("ALTERANDO EMAIL CONFIRMADO"))
+
+    var emailAtual = req.body.emailAtual 
+    var emailNovo = req.body.emailNovo
+
+    console.log(`Email atual : ${emailAtual}`)
+
+    console.log(`Email atual : ${emailNovo}`)
+})
+
 /* servidor web fica na escuta da solicitação do cliente (computador q possui navegador) na  porta 3000 */
 aplicacao.listen(3000, function(req, res) {
     console.log(greenText("##########"))

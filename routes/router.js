@@ -43,4 +43,10 @@ router.get('/usuarioPerfil', function(req,res) {
     res.render('../views/usuarios/perfil.ejs', {sendNome : sendNome, sendEmail : sendEmail, sendTel : sendTel})
 })
 
+
+var emailAtual = ""
+router.get('/alteraEmail', function(req,res) {
+    res.render('../views/usuarios/alterar/email.ejs', {emailAtual : emailAtual})
+})
+
 module.exports = router
