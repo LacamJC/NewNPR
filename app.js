@@ -254,9 +254,9 @@ aplicacao.post('/cadastrarPonto', function(req,res) {
 
 aplicacao.post('/alterarEmail', function(req, res) {
     console.log(yellowText("ALTERANDO EMAIL"))
-
+    var msg = ""
     var emailAtual = req.body.emailAtual 
-    res.render('../views/usuarios/alterar/email.ejs', {emailAtual : emailAtual})
+    res.render('../views/usuarios/alterar/email.ejs', {emailAtual : emailAtual, msg : msg})
 })
 
 aplicacao.post('/alterarEmailConfirm', function(req,res) {
@@ -265,6 +265,7 @@ aplicacao.post('/alterarEmailConfirm', function(req,res) {
     var emailAtual = req.body.emailAtual 
     var emailNovo = req.body.emailNovo
     var senhaUsuario = req.body.senha 
+    var msg = ""
 
     console.log(`Senha de usuario: ${senhaUsuario}`)
     console.log(`Email atual : ${emailAtual}`)
@@ -280,11 +281,13 @@ aplicacao.post('/alterarEmailConfirm', function(req,res) {
                 console.log(greenText("### EMAIL ALTERADO COM SUCESSO ###"))
                 res.send("Email alterado")
             }).catch(error => {
-                console.error(redText("Erro ao alterar email"))
+                console.send(redText("Erro ao alterar email"))
             })
         } else 
         {
             console.log(redText("USUARIO NAO ENCONTRADO OU SENHA INCORRETA"))
+            msg = "USUARIO NAO ENCONTRADO OU SENHA INCORRETA"
+            res.render('../views/usuarios/alterar/email.ejs', {emailAtual : emailAtual, msg : msg})
         }
 
     })
