@@ -50,4 +50,8 @@ router.get('/alteraEmail', function(req,res) {
     res.render('../views/usuarios/alterar/email.ejs', {emailAtual : emailAtual, msg:msg})
 })
 
+router.get('/sucesso', function(req,res) {
+    res.render('../views/usuarios/alterar/sucesso.ejs')
+})
+
 module.exports = router

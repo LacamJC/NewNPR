@@ -322,13 +322,18 @@ aplicacao.post('/alterarTelefoneConfirm', function(req,res) {
         {
             tabelaUsuarios.update({telefone : telefoneNovo}).then(() => {
                 console.log(greenText("### TELEFONE ALTERADO COM SUCESSO ###"))
-                res.send("Telefone alterado")
+                
+                res.render('../views/usuarios/alterar/sucesso.ejs')
             }).catch(error => {
-                console.send(redText("Erro ao alterar Telefone"))
+                console.log(redText("Erro ao alterar Telefone"))
+                msg = "USUARIO NAO ENCONTRADO VERIFIQUE O NUMERO OU A SENHA"
+                res.render('../views/usuarios/alterar/telefone.ejs', {msg : msg})
             })
         } else 
         {
             console.log(redText("USUARIO NAO ENCONTRADO OUU SENHA INCORRETA"))
+            msg = "USUARIO NAO ENCONTRADO VERIFIQUE O NUMERO OU A SENHA"
+            res.render('../views/usuarios/alterar/telefone.ejs', {msg : msg, telefoneAtual : telefoneAtual})
         }
     })
 })
