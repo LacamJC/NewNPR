@@ -259,6 +259,16 @@ aplicacao.post('/alterarEmail', function(req, res) {
     res.render('../views/usuarios/alterar/email.ejs', {emailAtual : emailAtual, msg : msg})
 })
 
+aplicacao.post('/alterarTelefone', function(req,res) {
+    console.log(yellowText("ALTERANDO TELEFONE"))
+    var msg = ""
+    var telefoneAtual = req.body.telefoneAtual
+
+    console.log(yellowText(`TELEFONE ATUAL : ${telefoneAtual}`))
+
+    res.render('../views/usuarios/alterar/telefone.ejs', {telefoneAtual : telefoneAtual, msg :msg})
+})
+
 aplicacao.post('/alterarEmailConfirm', function(req,res) {
     console.log(yellowText("ALTERANDO EMAIL CONFIRMADO"))
 
@@ -292,6 +302,38 @@ aplicacao.post('/alterarEmailConfirm', function(req,res) {
 
     })
 })
+
+aplicacao.post('/alterarTelefoneConfirm', function(req,res) {
+    console.log(yellowText("ALTERANDO TELEFONE CONFIRM"))
+
+    var telefoneAtual = req.body.telefoneAtual 
+    var telefoneNovo = req.body.telefoneNovo
+    var senhaUsuario = req.body.senha 
+    var msg = ""
+
+    console.log(yellowText(`TELEFONE ATUAL : ${telefoneAtual}`))
+
+    console.log(yellowText(`TELEFONE NOVO : ${telefoneNovo}`))
+
+    console.log(yellowText(`SENHA : ${senhaUsuario}`))
+
+    bd_usuarios.findOne({where : {telefone : telefoneAtual, senha : senhaUsuario}}).then(tabelaUsuarios => {
+        if(tabelaUsuarios)
+        {
+            tabelaUsuarios.update({telefone : telefoneNovo}).then(() => {
+                console.log(greenText("### TELEFONE ALTERADO COM SUCESSO ###"))
+                res.send("Telefone alterado")
+            }).catch(error => {
+                console.send(redText("Erro ao alterar Telefone"))
+            })
+        } else 
+        {
+            console.log(redText("USUARIO NAO ENCONTRADO OUU SENHA INCORRETA"))
+        }
+    })
+})
+
+
 
 /* servidor web fica na escuta da solicitação do cliente (computador q possui navegador) na  porta 3000 */
 aplicacao.listen(3000, function(req, res) {
