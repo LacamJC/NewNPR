@@ -238,7 +238,10 @@ aplicacao.post('/cadastrarPonto', function(req,res) {
                     tipo : tipo
                 })
                 console.log(greenText(`### PONTO DE COLETA ${nomeInstituicao} CADASTRADO ###`))
-                res.send("FUNCIONA")
+                // res.send("FUNCIONA")
+
+
+                res.send("SUCESSO")
         } else 
         {
             console.log(redText("### USUARIO NAO ENCONTRADO ###"))
@@ -251,6 +254,8 @@ aplicacao.post('/cadastrarPonto', function(req,res) {
 
 
 })
+
+
 
 aplicacao.post('/alterarEmail', function(req, res) {
     console.log(yellowText("ALTERANDO EMAIL"))
@@ -336,6 +341,27 @@ aplicacao.post('/alterarTelefoneConfirm', function(req,res) {
             res.render('../views/usuarios/alterar/telefone.ejs', {msg : msg, telefoneAtual : telefoneAtual})
         }
     })
+})
+
+aplicacao.post('/VerlistaPontos', function(req,res){
+    
+    bd_pontos.findAll({
+        attributes: ['nome_instituicao', 'cep', 'cidade', 'bairro', 'rua', 'foto', 'descricao', 'tipo']
+    }).then(pontoColeta => {
+        const valoresNomeInstituicao = pontoColeta.map(ponto => ponto.nome_instituicao)
+        const valoresCep =             pontoColeta.map(ponto => ponto.cep) 
+        const valoresCidade =          pontoColeta.map(ponto => ponto.cidade)
+        const valoresBairro =          pontoColeta.map(ponto => ponto.bairro)
+        const valoresRua =             pontoColeta.map(ponto => ponto.rua) 
+        const valoresFoto =            pontoColeta.map(ponto => ponto.foto)
+        const valoresDescricao =       pontoColeta.map(ponto => ponto.descricao)
+        const valoresTipo =            pontoColeta.map(ponto => ponto.tipo)
+        console.log(yellowText(pontoColeta.length))        
+        res.render('../views/pontosDeColeta/lista.ejs', {instituicao : valoresNomeInstituicao, cep : valoresCep, cidade : valoresCidade, bairro : valoresBairro, rua : valoresRua, foto : valoresFoto, descricao : valoresDescricao, tipo : valoresTipo})
+    
+    })
+
+
 })
 
 

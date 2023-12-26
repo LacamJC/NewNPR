@@ -32,8 +32,18 @@ router.get('/login', function(req,res) {
     res.render('../views/login.ejs', {erros : erros, emailLogin : emailLogin})
 })
 
+
+instituicao = []
+cep = []
+cidade = []
+bairro = []
+rua = []
+foto = []
+descricao = []
+tipo = []
+
 router.get('/listaPontos', function(req,res) {
-    res.render('../views/pontosDeColeta/lista.ejs')
+    res.render('../views/pontosDeColeta/lista.ejs', {instituicao : instituicao, cep : cep, cidade : cidade,bairro : bairro, rua : rua, foto : foto, descricao : descricao, tipo : tipo})
 })
 
 var sendNome = ""
