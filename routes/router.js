@@ -64,4 +64,8 @@ router.get('/sucesso', function(req,res) {
     res.render('../views/usuarios/alterar/sucesso.ejs')
 })
 
+router.get('/infoPonto', function(req,res) {
+    res.render('../views/info_pontoColeta.ejs')
+})
+
 module.exports = router
