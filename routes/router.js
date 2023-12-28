@@ -42,10 +42,33 @@ foto = []
 descricao = []
 tipo = []
 
+// router.get('/listaPontos', function(req,res) {
+//     res.render('../views/pontosDeColeta/lista.ejs', {instituicao : instituicao, cep : cep, cidade : cidade,bairro : bairro, rua : rua, foto : foto, descricao : descricao, tipo : tipo})
+// })
+
 router.get('/listaPontos', function(req,res) {
-    res.render('../views/pontosDeColeta/lista.ejs', {instituicao : instituicao, cep : cep, cidade : cidade,bairro : bairro, rua : rua, foto : foto, descricao : descricao, tipo : tipo})
+    bd_pontos.findAll({
+        attributes: ['nome_instituicao', 'cep', 'cidade', 'bairro', 'rua', 'foto', 'descricao', 'tipo']
+    }).then(pontoColeta => {
+        const valoresNomeInstituicao = pontoColeta.map(ponto => ponto.nome_instituicao)
+        const valoresCep =             pontoColeta.map(ponto => ponto.cep) 
+        const valoresCidade =          pontoColeta.map(ponto => ponto.cidade)
+        const valoresBairro =          pontoColeta.map(ponto => ponto.bairro)
+        const valoresRua =             pontoColeta.map(ponto => ponto.rua) 
+        const valoresFoto =            pontoColeta.map(ponto => ponto.foto)
+        const valoresDescricao =       pontoColeta.map(ponto => ponto.descricao)
+        const valoresTipo =            pontoColeta.map(ponto => ponto.tipo)
+        console.log((pontoColeta.length))        
+        res.render('../views/pontosDeColeta/lista.ejs', {instituicao : valoresNomeInstituicao, cep : valoresCep, cidade : valoresCidade, bairro : valoresBairro, rua : valoresRua, foto : valoresFoto, descricao : valoresDescricao, tipo : valoresTipo})
+    
+    })
+    // res.render('../views/pontosDeColeta/lista.ejs', {instituicao : instituicao, cep : cep, cidade : cidade,bairro : bairro, rua : rua, foto : foto, descricao : descricao, tipo : tipo})
 })
 
+// 
+
+
+// 
 var sendNome = ""
 var sendEmail = ""
 var sendTel = ""
