@@ -1,5 +1,5 @@
 const express = require('express')
-
+const bd_pontos = require('../database/bd_pontos.js')
 const router = express.Router()
 
 router.get('/', function(req,res) {
@@ -64,8 +64,22 @@ router.get('/sucesso', function(req,res) {
     res.render('../views/usuarios/alterar/sucesso.ejs')
 })
 
+// Tentando coisas interessantes
+var contadorPonto = 0
 router.get('/infoPonto', function(req,res) {
-    res.render('../views/info_pontoColeta.ejs')
+   
+    bd_pontos.findAll({
+        attributes:['nome_instituicao']
+    }).then(pontoColeta => {
+        const valoresPontos = pontoColeta.map(ponto => ponto.nome_instituicao)
+
+        console.log(valoresPontos.length)
+        contadorPonto = valoresPontos.length
+        console.log(`Pontos em analise : ${contadorPonto}` )
+        res.render('../views/info_pontoColeta.ejs', {contadorPonto : contadorPonto})
+    })
+
+
 })
 
 module.exports = router
