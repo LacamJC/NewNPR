@@ -1,0 +1,44 @@
+:root {
+    --cor1: #5cb85c;
+    --cor2: #3498db;
+    --cor3: #f3c613;
+    --cor4: #95a5a6;
+
+    --cor5: #006400;
+    --cor6: #228B22;
+    --cor7: #deffde;
+    --cor8: #808000;
+}
+
+.apresentacao
+{
+    background-color: var(--cor1);
+}
+
+h1, p, h2, h3
+{
+    color: black;
+}
+
+
+.funcoes 
+{
+    background-color: var(--cor7);
+}
+
+.funcoes h3 
+{
+    color: var(--cor5);
+}
+
+
+.info
+{
+    background-color: var(--cor7);
+    padding-top: 10px;
+}
+
+.listas 
+{
+    background-color: var(--cor1);
+}
