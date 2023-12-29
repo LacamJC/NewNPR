@@ -6,6 +6,7 @@
     <title>NPR - Lista em analise</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="shortcut icon" href="img/icons/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
 
@@ -50,24 +51,54 @@
       </nav>
 
 
-      <main class="container-md bg-danger ">
-        <h2>Pontos em análise</h2>
+      <main class="container-md p-0 pt-2 conteudo">
+        <div class="alert alert-warning p-2 m-2">### Em desenvolvimento ###</div>
+        <h2 class="text-center">Pontos em análise</h2>
 
-        <div class="alert alert-danger">### Ainda incompleto ###</div>
+  
 
-        <div class="container">
+        <div class="container p-0">
          
-            <div class="row bg-warning g-2 p-5 ">
+            <div class="row bg-waring g-2 w-100 m-auto lista">
               <%for(i=0; i < instituicao.length; i++){ %>
                 <div class="card col col-4 my-2 mx-auto " style="width: 18rem; margin: auto;">
                     <img src="img/reciclagem.jpg" class="card-img-top" alt="..." style="width: 80px;
                     margin: auto;">
                     <div class="card-body">
                       <h5 class="card-title"><%=instituicao[i]%></h5>
-                      <p class="card-text"><%=descricao[i]%></p>
-                      <%=tipo[i]%>
+                      
+                      <p><%=tipo[i]%></p>
+                      
                     </div>
+                    <button type="button" class="btn btn-success w-75 m-auto mb-3" data-bs-toggle="modal" data-bs-target="#MoreInfo<%=i%>">Mais +</button>
                   </div>
+
+
+                                              <!-- Modal -->
+                                              <div class="modal fade" id="MoreInfo<%=i%>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                    <h1 class="modal-title fs-5" id="exampleModalLabel"><%=instituicao[i]%></h1>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <h6>Cidade: <%=cidade[i]%></h6>
+                                                        <h6>Bairro: <%=bairro[i]%></h6>
+                                                        <h6>Tipo de coleta: <%=tipo[i]%></h6>
+                                                        
+                                                        
+                                                        <h5>Descrição</h5>
+                                                        <textarea class="form-control"><%=descricao[i]%></textarea>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                                                    <a href="/mapa" class="btn btn-primary disabled">Ver no mapa</a>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            </div>
+                                                <!--  -->
                   <%}%>
             </div>
          

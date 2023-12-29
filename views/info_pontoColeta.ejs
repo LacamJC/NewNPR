@@ -52,26 +52,30 @@
     </nav>
 
 
-    <main class="container-md bg-danger ">
-      <article class="row pb-3 info">
-        <section class="col col-12 col-md-6 text-center">
+    <main class="container-md bg-danger p-0">
+      <article class="row pb-3 w-100 mx-auto info">
+        <section class="col col-12 col-md-6 text-center ">
           <h2>Pontos de coleta</h2>
         
           <p>São locais devidamente cadastrados e verificados, destinados à reciclagem. São espaços designados para o descarte adequado de resíduos recicláveis, tais como garrafas e papéis, os quais são coletados periodicamente. Essa prática visa evitar o descarte inadequado de lixo em nossa cidade.</p>
-          <img src="img/caixaReciclagem.png" alt="" style="width: 25%;" class="">
+          <img src="img/caixaReciclagem.png" alt="" style="width: 25%;" class="mb-3"> <br>
+          <a href="/cadastroPonto" class="btn btn-success">Cadastrar Ponto</a>
         </section>
-        <section class="col col-6 text-center mx-auto">
-          <div class="card mx-auto my-2" style="width: 18rem;">
+        <section class="col col-12  col-md-6 text-center mx-auto">
+          <div class="card mx-auto my-2" style="max-width: 18rem;">
             <div class="card-body">
               <h5 class="card-title">Pontos em análise</h5>
               <h6 class="card-subtitle mb-2 text-body-secondary">Números atualizados automaticamente</h6>
               <p class="card-text fs-4 fw-bold"><%=contadorPonto%></p>
+
+              <a href="/listaPontos" class="btn btn-success">Ver Pontos em análise</a>
             </div>
           </div>
         </section>
       </article>
 
       <article class="text-center py-3 listas">
+        
         <h2>Pontos cadastrados e em análise</h2>
         <ul class="w-50 m-auto text-start mb-3">
           <li>Pontos cadastrados: São pontos oficialmente cadastrados em nosso mapa caso queira ver quais <a href="/mapa">são clique aqui !</a></li>

@@ -42,3 +42,13 @@ h1, p, h2, h3
 {
     background-color: var(--cor1);
 }
+
+.conteudo
+{
+    background-color: var(--cor1);
+}
+
+.lista 
+{
+    background-color: var(--cor5);
+}
