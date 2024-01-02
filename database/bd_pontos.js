@@ -53,6 +53,6 @@ const bd_pontos = database.define('bd_pontos', {
       },
 })
 
-// bd_pontos.sync({force:true})
+ bd_pontos.sync({force:true})
 
 module.exports = bd_pontos
