@@ -41,6 +41,7 @@ h1, p, h2, h3
 .listas 
 {
     background-color: var(--cor1);
+    color: black;
 }
 
 .conteudo
