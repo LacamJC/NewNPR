@@ -52,3 +52,16 @@ h1, p, h2, h3
 {
     background-color: var(--cor5);
 }
+
+.banner
+{
+    width: 30%;
+}
+
+@media screen and (max-width :900px)
+{
+    .banner
+    {
+        width: 50%;
+    }
+}
