@@ -10,6 +10,15 @@
     --cor8: #808000;
 }
 
+.corEscura
+{
+    background-color: var(--cor5);
+}
+.corClara
+{
+    background-color: var(--cor1);
+}
+
 .apresentacao
 {
     background-color: var(--cor1);
