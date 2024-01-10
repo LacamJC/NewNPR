@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <meta http-equiv="refresh" content="5"> -->
     <title>NPR - Pontos de coleta</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
@@ -52,7 +53,7 @@
     </nav>
 
 
-    <main class="container-md bg-danger p-0">
+    <main class="container-md bg-dager p-0 infoPonto" style="min-height: 900px;">
       <article class="row pb-3 w-100 mx-auto info">
         <section class="col col-12 col-md-6 text-center ">
           <h2>Pontos de coleta</h2>
@@ -61,7 +62,7 @@
           <img src="img/caixaReciclagem.png" alt="" style="width: 25%;" class="mb-3"> <br>
           <a href="/cadastroPonto" class="btn btn-success">Cadastrar Ponto</a>
         </section>
-        <section class="col col-12  col-md-6 text-center mx-auto">
+        <section class="col col-12  col-md-6 text-center mx-auto" style="display: flex; justify-content: center; align-items: center;">
           <div class="card mx-auto my-2" style="max-width: 18rem;">
             <div class="card-body">
               <h5 class="card-title">Pontos em análise</h5>
@@ -74,13 +75,23 @@
         </section>
       </article>
 
-      <article class="text-center py-3 listas">
+      <article class="text-center py-3 row listas w-100 m-auto">
         
-        <h2>Pontos cadastrados e em análise</h2>
-        <ul class="w-50 m-auto text-start mb-3">
+        <!-- <ul class="w-50 m-auto text-start mb-3">
           <li>Pontos cadastrados: São pontos oficialmente cadastrados em nosso mapa caso queira ver quais <a href="/mapa">são clique aqui !</a></li>
           <li>Pontos em análise: São pontos enviados por usuarios, que estão em fase de analise por nossos adminstrados que após decisão dos mesmos serão inseridos no mapa manualmente. <a href="/listaPontos">Clique aqui para ver todos os pontos em análise</a></li>
-        </ul>
+        </ul> -->
+
+        <section class="col-12 col-md-6">
+          <h3>Pontos de Coleta Cadastrados</h3>
+          <p>São pontos oficialmente cadastrados em nosso mapa caso queira ver quais <a href="/mapa">são clique aqui !</a></p>
+        </section>
+
+        <section class="col-12 col-md-6">
+          <h3>Pontos de Coleta em análise</h3>
+          <p>São pontos enviados por usuarios, que estão em fase de analise por nossos adminstrados que após decisão dos mesmos serão inseridos no mapa manualmente. <a href="/listaPontos">Clique aqui para ver todos os pontos em análise</a></p>
+          <img src="img/caminhao.png" alt="" style="width:25%;">
+        </section>
       </article>
     </main>
 

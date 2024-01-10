@@ -60,7 +60,7 @@ h1, p, h2, h3
 
 .lista 
 {
-    background-color: var(--cor5);
+    background-color: var(--cor6);
 }
 
 .banner
@@ -68,10 +68,71 @@ h1, p, h2, h3
     width: 30%;
 }
 
+/* .active
+{
+    border-bottom: 2px solid black;
+} */
+
+.mapa
+{
+    background-color: var(--cor1);
+}
+
+.infoPonto
+{
+    background-color: var(--cor6);
+}
+
+
+.loginForm
+{
+    background-color: white;
+    border-radius: 15px;
+    max-width: 500px;
+    margin-top: 80px;
+}
+
+.background
+{
+    background-color: var(--cor7);
+}
+
+.cadUsu
+{
+    border: 1px solid black;
+    background-color: white;
+
+    margin-top: 80px;
+}
+
 @media screen and (max-width :900px)
 {
     .banner
     {
         width: 50%;
+    }
+}
+
+@media screen and (max-width: 426px)
+{
+    .loginForm
+    {
+        /* background-color: red; */
+        max-width: 100%;
+
+        margin-top: 0px;
+        margin-right: 0px;
+        margin-left: 0px;
+
+    }
+
+    .cadUsu
+    {
+        /* background-color: red; */
+        width: 100%;
+        border-left: none;
+        border-right: none;
+        border-top: none;
+        margin-top: 0px;
     }
 }
