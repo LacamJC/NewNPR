@@ -26,13 +26,7 @@
 
 #### Como rodar o projeto
 
+Instale as dependencias NPM caso não tenha 
+```npm install
 
-Isso criará uma caixa de código que representa um comando do terminal. Os usuários podem copiar e colar diretamente essa seção em seus terminais.
 
-Se você deseja destacar uma linguagem específica, você pode ajustar o bloco de código conforme necessário. Por exemplo, para JavaScript:
-
-```markdown
-Para executar o script, use o seguinte comando:
-
-```javascript
-node script.js
