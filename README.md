@@ -19,7 +19,7 @@ Uma aplicação web com foco em medidas de sustentabilidade para a organização
 - Sequelize
 
 ## Como Rodar o Projeto
-
+#### Certifique-se que tenha o Node instalado em sua maquina
 ### Instale as Dependências (se necessário)
 ```bash
 npm install axios
@@ -43,3 +43,5 @@ const sequelize = new Sequelize("<nome_do_banco>","<nome_do_usuario>","<senha>",
 })
 
 module.exports = sequelize
+```
+
