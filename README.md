@@ -28,10 +28,10 @@ A aplicação NPR é destinada ao público em geral, atendendo a todos os públi
 ## Screenshots
 <div>
   <img src="screenshots/captura_npr.png" alt="Página Inicial" width="50%">
-</div>
-<div>
   <img src="screenshots/captura_npr2.png" alt="Página Inicial" width="50%">
+  <img src="screenshots/captura_npr3.png" alt="Página inicial" width="50%>
 </div>
+
 ![Texto Alternativo](screenshots/captura_npr4.png)
 
 
