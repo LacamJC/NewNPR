@@ -45,9 +45,14 @@ const sequelize = new Sequelize("<nome_do_banco>","<nome_do_usuario>","<senha>",
 module.exports = sequelize
 ```
 
-Após isso execute o comando para inicializar o Projeto
+Após isso execute o comando para inicializar o Projeto 
 
 ```bash
 node app
+```
+
+Vá para o navegador e entre em seu localhost acessando a porta 3000
+```
+http://localhost:3000/
 ```
 
