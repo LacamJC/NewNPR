@@ -27,6 +27,7 @@
 #### Como rodar o projeto
 
 Instale as dependencias NPM caso não tenha 
-```npm install
-
+```
+npm install
+```
 
