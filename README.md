@@ -26,30 +26,31 @@
 
 #### Como rodar o projeto
 
-<h2>Instale as dependencias caso necessario</h2>
-```
+### Como Rodar o Projeto
 
-    npm install axios
-
-    npm install ejs
-
-    npm install sequelize
-
-    npm install mysql2
+#### Instale as Dependências (se necessário)
+```bash
+npm install axios
+npm install ejs
+npm install sequelize
+npm install mysql2
 
 
 
 
-<h2>Acesse o diretorio do banco de dados para fazer conexão com seu banco e altere com as informações do seu banco</h2>
-```
-  const Sequelize = require('sequelize')
-  
-  const sequelize = new Sequelize("<nome_do_banco>","<nome_do_usuario>","<senha>", {
-       dialect: "mysql",
-       host: "<nome_do_seu_host>",
-       port: <sua_porta>
-   })
-  
-   module.exports = sequelize
+Configuração do Banco de Dados
+Acesse o diretório do banco de dados para fazer conexão com seu banco.
+Abra o arquivo conexao.js e altere as informações para refletir as configurações do seu banco de dados:
 
+const Sequelize = require('sequelize')
+
+const sequelize = new Sequelize("<nome_do_banco>","<nome_do_usuario>","<senha>", {
+   dialect: "mysql",
+   host: "<nome_do_seu_host>",
+   port: <sua_porta>
+})
+
+module.exports = sequelize
+
+Não se esqueça de alterar as informações pelas referentes ao seu banco.
 
