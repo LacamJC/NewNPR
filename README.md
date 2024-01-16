@@ -26,8 +26,16 @@
 
 #### Como rodar o projeto
 
-Instale as dependencias NPM caso não tenha 
+Instale as dependencias caso necessario
 ```
-npm install
+    npm install express
+
+    npm install axios
+
+    npm install ejs
+
+    npm install sequelize
+
+    npm install mysql2
 ```
 
