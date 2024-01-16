@@ -1,7 +1,13 @@
 # Natureza Prioridade Renovada - NPR
 
 ## Sobre
-Uma aplicação web com foco em medidas de sustentabilidade para a organização social sobre a coleta de lixo em Barueri.
+A aplicação NPR é um projeto desenvolvido por um grupo de estudantes com o objetivo de facilitar a coleta de lixo reciclável e apoiar iniciativas de proteção ao meio ambiente. A plataforma visa oferecer assistência e combate ao descarte irregular de resíduos, promovendo o compartilhamento de informações e um sistema de coleta especializada.
+
+## Objetivo
+O principal objetivo da aplicação NPR é proporcionar uma plataforma que facilite a coleta de lixo reciclável, combata o descarte irregular de resíduos e apoie a proteção ao meio ambiente.
+
+## Público-Alvo
+A aplicação NPR é destinada ao público em geral, atendendo a todos os públicos interessados em contribuir para a proteção do meio ambiente e a coleta eficiente de lixo reciclável.
 
 ## Funcionalidades
 - Cadastro de Usuário
@@ -19,11 +25,12 @@ Uma aplicação web com foco em medidas de sustentabilidade para a organização
 - Sequelize
 
 ## Como Rodar o Projeto
-#### Certifique-se que tenha o Node instalado em sua maquina
+**Certifique-se de ter o Node instalado em sua máquina.**
 
-### Clone o Repositorio
+### Clone o Repositório e vá para ele
 ```bash
 git clone https://github.com/LacamJC/NewNPR.git
+cd NewNPR 
 ```
 
 ### Instale as Dependências (se necessário)
