@@ -20,6 +20,11 @@ Uma aplicação web com foco em medidas de sustentabilidade para a organização
 
 ## Como Rodar o Projeto
 #### Certifique-se que tenha o Node instalado em sua maquina
+
+### Clone o Repositorio
+```bash
+git clone https://github.com/LacamJC/NewNPR.git
+
 ### Instale as Dependências (se necessário)
 ```bash
 npm install axios
