@@ -23,6 +23,11 @@ A aplicação NPR é destinada ao público em geral, atendendo a todos os públi
 - Javascript
 - MySQL
 - Sequelize
+- Bootstrap
+
+## Screenshots
+![Texto Alternativo](screenshots/captura_npr.png)
+
 
 ## Como Rodar o Projeto
 **Certifique-se de ter o Node instalado em sua máquina.**
