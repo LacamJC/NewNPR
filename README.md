@@ -9,6 +9,9 @@ O principal objetivo da aplicação NPR é proporcionar uma plataforma que facil
 ## Público-Alvo
 A aplicação NPR é destinada ao público em geral, atendendo a todos os públicos interessados em contribuir para a proteção do meio ambiente e a coleta eficiente de lixo reciclável.
 
+## Avisos
+Atualmente ele está em uma etapa bem avançada mas ainda possui seus pontos a serem melhorados, estou sempre pensando em novas coisas que posso fazer para tornar este projeto maior !
+
 ## Funcionalidades
 - Cadastro de Usuário
 - Cadastro de Pontos de Coleta
