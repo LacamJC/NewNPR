@@ -55,9 +55,14 @@ cd NewNPR
 
 ### Instale as Dependências (se necessário)
 ```bash
+npm install 
+
 npm install axios
-npm install ejs
+
+npm install ejs 
+
 npm install sequelize
+
 npm install mysql2
 ```
 
@@ -88,4 +93,6 @@ Vá para o navegador e entre em seu localhost acessando a porta 3000
 ```
 http://localhost:3000/
 ```
+
+
 
