@@ -28,7 +28,7 @@ A aplicação NPR é destinada ao público em geral, atendendo a todos os públi
 ## Screenshots
 ![Texto Alternativo](screenshots/captura_npr.png)
 ![Texto Alternativo](screenshots/captura_npr2.png)
-![Texto Alternativo](screenshots/captura_npr3.png)
+![Texto Alternativo](screenshots/captura_npr4.png)
 
 
 ## Como Rodar o Projeto
