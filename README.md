@@ -24,6 +24,7 @@ Uma aplicação web com foco em medidas de sustentabilidade para a organização
 ### Clone o Repositorio
 ```bash
 git clone https://github.com/LacamJC/NewNPR.git
+```
 
 ### Instale as Dependências (se necessário)
 ```bash
