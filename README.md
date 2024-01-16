@@ -45,3 +45,9 @@ const sequelize = new Sequelize("<nome_do_banco>","<nome_do_usuario>","<senha>",
 module.exports = sequelize
 ```
 
+Após isso execute o comando para inicializar o Projeto
+
+```bash
+node app
+```
+
