@@ -26,3 +26,9 @@ npm install axios
 npm install ejs
 npm install sequelize
 npm install mysql2
+```
+
+Após isso acesse o arquivo conexao.js dentro do diretorio database que seria 
+```bash
+NewNPR/database/conexao.js
+```
