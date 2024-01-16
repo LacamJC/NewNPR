@@ -28,7 +28,6 @@
 
 <h2>Instale as dependencias caso necessario</h2>
 ```
-    npm install express
 
     npm install axios
 
@@ -37,10 +36,20 @@
     npm install sequelize
 
     npm install mysql2
+
+
+
+
+<h2>Acesse o diretorio do banco de dados para fazer conexão com seu banco e altere com as informações do seu banco</h2>
 ```
-
-<h2>Acesse o diretorio do banco de dados para fazer conexão com seu banco</h2>
-
-
+  const Sequelize = require('sequelize')
+  
+  const sequelize = new Sequelize("<nome_do_banco>","<nome_do_usuario>","<senha>", {
+       dialect: "mysql",
+       host: "<nome_do_seu_host>",
+       port: <sua_porta>
+   })
+  
+   module.exports = sequelize
 
 
