@@ -1,5 +1,17 @@
 # Natureza Prioridade Renovada - NPR
 
+# Natureza Prioridade Renovada - NPR
+
+- [Sobre](#sobre)
+- [Objetivo](#objetivo)
+- [Público-Alvo](#público-alvo)
+- [considerações](#avisos)
+- [Funcionalidades](#funcionalidades)
+- [Tecnologias](#tecnologias)
+- [Screenshots](#screenshots)
+- [Como Rodar o Projeto](#como-rodar-o-projeto)
+
+
 ## Sobre
 A aplicação NPR é um projeto desenvolvido por um grupo de estudantes com o objetivo de facilitar a coleta de lixo reciclável e apoiar iniciativas de proteção ao meio ambiente. A plataforma visa oferecer assistência e combate ao descarte irregular de resíduos, promovendo o compartilhamento de informações e um sistema de coleta especializada.
 
@@ -9,7 +21,7 @@ O principal objetivo da aplicação NPR é proporcionar uma plataforma que facil
 ## Público-Alvo
 A aplicação NPR é destinada ao público em geral, atendendo a todos os públicos interessados em contribuir para a proteção do meio ambiente e a coleta eficiente de lixo reciclável.
 
-## Avisos
+## considerações
 Atualmente ele está em uma etapa bem avançada mas ainda possui seus pontos a serem melhorados, estou sempre pensando em novas coisas que posso fazer para tornar este projeto maior !
 
 ## Funcionalidades
@@ -29,20 +41,9 @@ Atualmente ele está em uma etapa bem avançada mas ainda possui seus pontos a s
 - Bootstrap
 
 ## Screenshots
-<div style="display:flex; flex-wrap:wrap;">
-  <img src="screenshots/captura_npr.png" alt="Página Inicial" width="40%">
-  <img src="screenshots/captura_npr2.png" alt="Página Inicial" width="40%">
-<img src="screenshots/captura_npr3.png" alt="Página inicial" width="40%">
-
-</div>
-  <img src="screenshots/captura_npr4.png" alt="Pagina inicial no Mobile" width="20%">
-
-
-
-
-
-
-
+| Página Inicial no deskptop | Página de login no desktop | Página de cadastro no desktop | Página Inicial (Mobile) |
+|:--------------:|:--------------:|:--------------:|:------------------------:|
+| ![Imagem1](screenshots/captura_npr.png) | ![Imagem2](screenshots/captura_npr2.png) | ![Imagem3](screenshots/captura_npr3.png) | ![Imagem4](screenshots/captura_npr4.png) |
 
 ## Como Rodar o Projeto
 **Certifique-se de ter o Node instalado em sua máquina.**
