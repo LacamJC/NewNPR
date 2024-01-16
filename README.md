@@ -32,3 +32,14 @@ Após isso acesse o arquivo conexao.js dentro do diretorio database que seria
 ```bash
 NewNPR/database/conexao.js
 ```
+E altere as informaçoes de acordo com as configuraçoes do seu Banco de Dados
+```javascript
+const Sequelize = require('sequelize')
+
+const sequelize = new Sequelize("<nome_do_banco>","<nome_do_usuario>","<senha>", {
+   dialect: "mysql",
+   host: "<nome_do_seu_host>",
+   port: <sua_porta>
+})
+
+module.exports = sequelize
