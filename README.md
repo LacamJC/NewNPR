@@ -26,7 +26,7 @@
 
 #### Como rodar o projeto
 
-Instale as dependencias caso necessario
+<h2>Instale as dependencias caso necessario</h2>
 ```
     npm install express
 
@@ -38,4 +38,9 @@ Instale as dependencias caso necessario
 
     npm install mysql2
 ```
+
+<h2>Acesse o diretorio do banco de dados para fazer conexão com seu banco</h2>
+
+
+
 
