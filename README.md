@@ -32,7 +32,7 @@ A aplicação NPR é destinada ao público em geral, atendendo a todos os públi
 <img src="screenshots/captura_npr3.png" alt="Página inicial" width="40%">
 
 </div>
-  <img src="screenshots/captura_npr4.png" alt="Pagina inicial no Mobile" heigth="50%">
+  <img src="screenshots/captura_npr4.png" alt="Pagina inicial no Mobile" heigth="300px">
 
 
 
