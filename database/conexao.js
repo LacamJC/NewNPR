@@ -6,7 +6,7 @@ const Sequelize = require('sequelize')
 
 const sequelize = new Sequelize("railway","root","a6Bd6-hC2Cad4BFAeg2ahH12hCcHc63b", {
     dialect: "mysql",
-    host: "rviaduct.proxy.rlwy.net",
+    host: "viaduct.proxy.rlwy.net",
     port: 52417
 })
 
