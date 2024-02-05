@@ -392,8 +392,8 @@ app.post('/VerlistaPontos', function(req,res){
 //     console.log(greenText("##########"))
 // })
 
-//Use PORT provided in environment or default to 3000 process.env.PORT ||
-const port = 3000;
+//Use PORT provided in environment or default to 3000 
+const port = process.env.PORT ||3000;
 
 // Listen on `port` and 0.0.0.0
 app.listen(port, "0.0.0.0", function () {
