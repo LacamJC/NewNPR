@@ -11,6 +11,14 @@ const bd_comentarios = require('./database/bd_comentarios.js')
 const bd_usuarios = require('./database/bd_usuarios.js')
 const bd_pontos = require('./database/bd_pontos.js')
 
+
+const path = require('path')
+const multer = require('multer')
+const upload = multer({dest: path.join(__dirname, 'public/uploads')})
+app.use(upload.single('foto')) 
+
+
+
 const redText = (text) => '\x1b[31m' + text + '\x1b[0m';
 const greenText = (text) => '\x1b[32m' + text + '\x1b[0m';
 const yellowText = (text) => '\x1b[33m' + text + '\x1b[0m';
@@ -66,7 +74,7 @@ app.post('/cadastrarUsuario', function(req, res) {
     var telefone = req.body.telefoneUsuario;
     var senha = req.body.senhaUsuario;
     var confirmaSenha = req.body.confirmaSenha;
-    var foto = req.body.fotoUsuario;
+    var foto = req.file ? req.file.filename : 'default.jpeg';
     var i = 0
     var e = 0 
 
@@ -153,11 +161,13 @@ app.post('/verificaLogin', async function(req, res) {
                 var sendNome = tabelaUsuarios.nome
                 var sendEmail = tabelaUsuarios.email
                 var sendTel = tabelaUsuarios.telefone
+                var sendFoto = tabelaUsuarios.foto
 
                 console.log(`Nome : ${sendNome}`)
                 console.log(`Email : ${sendEmail}`)
                 console.log(`Telefone : ${sendTel}`)
-                res.render('../views/usuarios/perfil.ejs', {sendNome : sendNome, sendEmail : sendEmail, sendTel : sendTel})
+                console.log(`Foto : ${sendFoto}`)
+                res.render('../views/usuarios/perfil.ejs', {sendNome : sendNome, sendEmail : sendEmail, sendTel : sendTel, sendFoto : sendFoto})
             } else {
                 console.log("### USUARIO NAO ENCONTRADO NO BANCO DE DADOS ###");
                 erros.push("Sem permissão. Usuário ou senha inválidos");
