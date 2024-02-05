@@ -1,6 +1,6 @@
 var express = require('express')//Criar objeto modulo Express
 
-var aplicacao = express() //Executa o express
+var app = express() //Executa o express
 
 const rotas = require('./routes/router')//Fazer o include do modulo router
 
@@ -18,23 +18,23 @@ const yellowText = (text) => '\x1b[33m' + text + '\x1b[0m';
 express.json() analisa os dados do formulario que  ficam no corpo de solicitação (POST),
 também chamado de request de entrada, para ser enviado ao servidor web
  */
-aplicacao.use(express.json())
+app.use(express.json())
 /* utiliza o objeto rotas que define os caminhos das páginas*/
-aplicacao.use('/', rotas)
+app.use('/', rotas)
 
 /* bodyParser serve para trabalhar com os dados vindo do formulario, ou seja, ele transforma
 e formata esse pacote de dados para o formato de objeto Javacript
  */
-aplicacao.use(bodyParser.urlencoded({extended:false}))
+app.use(bodyParser.urlencoded({extended:false}))
 
 /* include (utilizar) um arquivo externo */
-aplicacao.use(express.static(__dirname +'/public'))
+app.use(express.static(__dirname +'/public'))
 
 /* desmontrar que será utilizado o objeto ejs para interpretarvo template HTML no servidor web */
-aplicacao.set('view engine', 'ejs')
+app.set('view engine', 'ejs')
 
 /* Cadastrar comentario no banco de dados */
-aplicacao.post('/comentar', function(req,res) { 
+app.post('/comentar', function(req,res) { 
     
     console.log(yellowText("CADASTRANDO COMENTARIO"))
 
@@ -58,7 +58,7 @@ aplicacao.post('/comentar', function(req,res) {
 /* */
 
 // Cadastrar Novo Usuario no banco de dados
-aplicacao.post('/cadastrarUsuario', function(req, res) {
+app.post('/cadastrarUsuario', function(req, res) {
     // Variáveis do usuário
     console.log(yellowText("CADASTRANDO USUARIO"));
     var nome = req.body.nomeUsuario;
@@ -114,7 +114,7 @@ aplicacao.post('/cadastrarUsuario', function(req, res) {
 // 
 
 // Verificacao de login
-aplicacao.post('/verificaLogin', async function(req, res) {
+app.post('/verificaLogin', async function(req, res) {
     console.log("### VERIFICANDO BANCO DE DADOS ");
 
     var emailLogin = req.body.emailLogin;
@@ -176,7 +176,7 @@ aplicacao.post('/verificaLogin', async function(req, res) {
 
 
 
-aplicacao.post('/cadastrarPonto', function(req,res) {
+app.post('/cadastrarPonto', function(req,res) {
     console.log(greenText("### CADASTRANDO PONTO ###"))
 
     var emailUsuario = req.body.textEmail
@@ -276,14 +276,14 @@ aplicacao.post('/cadastrarPonto', function(req,res) {
 
 
 
-aplicacao.post('/alterarEmail', function(req, res) {
+app.post('/alterarEmail', function(req, res) {
     console.log(yellowText("ALTERANDO EMAIL"))
     var msg = ""
     var emailAtual = req.body.emailAtual 
     res.render('../views/usuarios/alterar/email.ejs', {emailAtual : emailAtual, msg : msg})
 })
 
-aplicacao.post('/alterarTelefone', function(req,res) {
+app.post('/alterarTelefone', function(req,res) {
     console.log(yellowText("ALTERANDO TELEFONE"))
     var msg = ""
     var telefoneAtual = req.body.telefoneAtual
@@ -293,7 +293,7 @@ aplicacao.post('/alterarTelefone', function(req,res) {
     res.render('../views/usuarios/alterar/telefone.ejs', {telefoneAtual : telefoneAtual, msg :msg})
 })
 
-aplicacao.post('/alterarEmailConfirm', function(req,res) {
+app.post('/alterarEmailConfirm', function(req,res) {
     console.log(yellowText("ALTERANDO EMAIL CONFIRMADO"))
 
     var emailAtual = req.body.emailAtual 
@@ -327,7 +327,7 @@ aplicacao.post('/alterarEmailConfirm', function(req,res) {
     })
 })
 
-aplicacao.post('/alterarTelefoneConfirm', function(req,res) {
+app.post('/alterarTelefoneConfirm', function(req,res) {
     console.log(yellowText("ALTERANDO TELEFONE CONFIRM"))
 
     var telefoneAtual = req.body.telefoneAtual 
@@ -362,7 +362,7 @@ aplicacao.post('/alterarTelefoneConfirm', function(req,res) {
     })
 })
 
-aplicacao.post('/VerlistaPontos', function(req,res){
+app.post('/VerlistaPontos', function(req,res){
     
     bd_pontos.findAll({
         attributes: ['nome_instituicao', 'cep', 'cidade', 'bairro', 'rua', 'foto', 'descricao', 'tipo']
@@ -386,16 +386,16 @@ aplicacao.post('/VerlistaPontos', function(req,res){
 
 
 /* servidor web fica na escuta da solicitação do cliente (computador q possui navegador) na  porta 3000 */
-// aplicacao.listen(3000, function(req, res) {
+// app.listen(3000, function(req, res) {
 //     console.log(greenText("##########"))
 //     console.log(greenText("Servidos aberto"))
 //     console.log(greenText("##########"))
 // })
 
-//Use PORT provided in environment or default to 3000
-const port = process.env.PORT || 3000;
+//Use PORT provided in environment or default to 3000 process.env.PORT ||
+const port = 3000;
 
 // Listen on `port` and 0.0.0.0
-aplicacao.listen(port, "0.0.0.0", function () {
-  console.log("SERVER OPEN")
+app.listen(port, "0.0.0.0", function () {
+  console.log(`SERVER OPEN ON PORT ${port}`)
 });

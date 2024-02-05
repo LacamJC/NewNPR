@@ -16,7 +16,7 @@
 
 const Sequelize = require('sequelize')
 
-const sequelize = new Sequelize("NewNPR","ramajo","", {
+const sequelize = new Sequelize("NewNPR","ramajo","123456", {
     dialect: "mysql",
     host: "localhost",
     port: 3306

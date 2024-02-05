@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Protest+Riot&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap');
+
+:root 
+{
+    --cor1: #5cb85c;
+
+    --preto: #000000;
+    --cinza: #333333;
+}
+
+
+.nav-item
+{
+    /* background-color: red; */
+    margin: 0px 10px;
+    ;
+}
+
+.active 
+{
+    color: var(--cor1) !important;
+}
+
+
+
+.nav-link 
+{
+    /* color: red; */
+    font-size: 1.1em;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+
+.line 
+{
+    width: 0%;
+    border: 1px solid transparent;
+    position: relative;
+    bottom: 5px;
+
+    transition: all 0.5s ease;
+}
+
+.nav-item:hover .line 
+{
+    width: 100%;
+    border: 1px solid black;
+}
+
+
+
+
+
+
+
+
+
+.fonte--destaque
+{
+    font-family: "Protest Riot", 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--preto);
+    font-size: 3.2em;
+}
+
+.fonte--destaque::first-letter
+{
+    color: var(--cor1);
+}
+
+.subtitulo
+{
+    font-family: "Protest Strike", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.paragrafo
+{
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: var(--cinza);
+    /* background-color: rgba(255, 0, 0, 0.486); */
+    font-size: 1.2em;
+}
+
+.banner
+{
+    width: 30%;
+}
+
+footer 
+{
+    /* background-color: rgba(255, 0, 0, 0.411); */
+    width: 100%;
+    min-height: 300px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 100px;
+}
+
+.footer__item
+{
+    width: 300px;
+    padding: 10px;
+}
+
+
+.redes--sociais h3 
+{
+    text-align: center;
+    font-size: 1.6em;
+
+}
+
+.redes--sociais a {
+    text-decoration: none;
+    /* background-color: blue; */
+    /* margin: 30px 0px; */
+}
+
+.redes--sociais a:hover 
+{
+    text-decoration: underline;
+    text-decoration-color: black;
+}
+.redes--sociais ul 
+{
+    list-style: none;
+    /* background-color: red; */
+    padding: 0px;
+    margin: auto;
+    width: 200px;
+
+
+}
+
+.redes--sociais ul li
+{
+    color: var(--preto);
+    font-size: 1.5em;
+    margin: 20px 0px;
+    /* background-color: blue; */
+    padding: 10px 5px;
+}
+
+.btn-npr
+{
+    height: 41px;
+    background-color: var(--cor1);
+    color: rgb(245, 245, 245);
+    font-weight: bold;
+    width: 175px;
+    display: flex;
+    justify-content: ali;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+
+    transition: all 0.5s ease;
+}
+
+.btn-npr:hover 
+{
+    background-color: #5bd85b;
+    color: white;
+    transform: translateX(2px) translateY(2px);
+}

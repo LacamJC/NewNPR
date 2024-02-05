@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Home page</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/stylse.css">
+    <link rel="stylesheet" href="css/index.css">
     <link rel="shortcut icon" href="img/icons/favicon.png" type="image/x-icon">
   </head>
   <body>
@@ -27,18 +28,22 @@
 
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    <div class="line line__active"></div>
                   </li>
 
                   <li class="nav-item">
                     <a class="nav-link" href="/mapa">Mapa</a>
+                     <div class="line"></div>
                   </li>
 
                   <li class="nav-item">
                     <a class="nav-link" href="/login">Login</a>
+                     <div class="line"></div>
                   </li>
 
                   <li class="nav-item">
                     <a class="nav-link" href="/infoPonto">Pontos de coleta</a>
+                     <div class="line"></div>
                   </li>
 
                 </ul>
@@ -49,34 +54,34 @@
 
           </nav>
 
-          <main class="container-md bg-danger pm-5" style=" padding: 0px;">     
+          <main class="container-md bg-dager pm-5" style=" padding: 0px;">     
       
             <article class=" row  m-auto w-100 p-3 apresentacao" id="">
               <span class="alert alert-warning">
                 Esta é uma página em desenvolvimento e reformulação, teste as funcionalidades caso queira e mande um Feedback !
               </span>           
   
-                <section class="col col-12 col-md-6 my-auto">
-                    <h1>Natureza Prioridade Renovada </h1>
-                    <p>Nós, da NPR, estamos empenhados em contribuir para o combate ao descarte irregular de resíduos em nossa cidade. Oferecemos pontos de coleta estrategicamente localizados, um mapa informativo que destaca esses pontos e uma ampla quantidade de informações sobre práticas sustentáveis. Acreditamos que, juntos, podemos fazer a diferença e ajudar a preservar o meio ambiente.</p>
+                <section class="col col-12 col-md-8 my-auto">
+                    <h1 class="fonte--destaque">Natureza Prioridade Renovada </h1>
+                    <p class="paragrafo">Nós, da NPR, estamos empenhados em contribuir para o combate ao descarte irregular de resíduos em nossa cidade. Oferecemos pontos de coleta estrategicamente localizados, um mapa informativo que destaca esses pontos e uma ampla quantidade de informações sobre práticas sustentáveis. Acreditamos que, juntos, podemos fazer a diferença e ajudar a preservar o meio ambiente.</p>
                 </section>
 
-                <img src="img/logotipo.svg" alt="" class="col col-4 bg-light rounded mx-auto d-block banner">
+                <img src="img/logotipo.svg" alt="" class="col col-2 rounded mx-auto d-block banner">
               </article>
 
             <article class=" p-3 m-auto w-100 row funcoes"> 
               <section class=" text-center p-2 mx-auto col col-12 col-md-6">
-                <h3>Nosso Mapa</h3>
+                <h3 class="subtitulo">Nosso Mapa</h3>
                 <img src="img/caminhao.png" alt="" class="banner">
-                <p class="">Explore nosso mapa de Pontos Oficiais, onde você encontrará informações sobre todos os locais ativos atualmente. Descubra a localização exata de cada ponto e o tipo específico de coleta que eles oferecem.</p>
-                <a href="/mapa" class="btn btn-success">Ir para mapa</a>
+                <p class="paragrafo">Explore nosso mapa de Pontos Oficiais, onde você encontrará informações sobre todos os locais ativos atualmente. Descubra a localização exata de cada ponto e o tipo específico de coleta que eles oferecem.</p>
+                <a href="/mapa" class="btn btn-npr">Ir para mapa</a>
               </section>
 
               <section class="text-center p-0 mx-auto col col-6" style="min-width: 300px;">
-                <h3>Faça cadastro</h3>
-                <img src="img/reciclagem.jpg" alt="" class="banner">
-                <p>Quer enviar pontos de coleta para a análise? Basta se cadastrar no nosso sistema. É rápido e fácil!</p>
-                <a href="/cadastroUsuario" class="btn btn-success">Fazer cadastro</a>
+                <h3 class="subtitulo">Faça cadastro</h3>
+                <img src="img/reciclagem.png" alt="" class="banner">
+                <p class="paragrafo">Se você deseja contribuir enviando pontos de coleta para a análise, basta se cadastrar no nosso sistema. O processo é rápido !</p>
+                <a href="/cadastroUsuario" class="btn btn-npr">Fazer cadastro</a>
               </section>
             </article>
 
@@ -90,7 +95,7 @@
 
   
  
-        <footer class="mt-5">
+        <!-- <footer class="mt-5">
           <form action="/comentar" method="post" class="w-50 m-auto">
             <div class="mb-3">
               <label for="exampleFormControlTextarea1" class="form-label">Deixe seu Comentario/Feedback</label>
@@ -124,9 +129,41 @@
          
                 </ul>
             </nav>
+          </footer> -->
+
+          <footer>
+            <div class="redes--sociais footer__item">
+              <h3>Nossas redes</h3>
+              <ul>
+                <a href="#">
+                  <li><i class="fa-brands fa-twitter"></i> Twitter</li>
+                </a>
+                <a href="#">
+                  <li><i class="fa-brands fa-instagram"></i> Instagram</li>
+                </a>
+                <a href="#">
+                  <li><i class="fa-brands fa-facebook"></i> Facebook</li>
+                </a>
+              </ul>
+            </div>
+
+            <div class="comentario footer__item">
+              <form action="/comentar" method="post" class="m-auto">
+                <div class="mb-3">
+                  <label for="exampleFormControlTextarea1" class="form-label">Deixe seu Comentario/Feedback</label>
+                  <textarea class="form-control" id="exampleFormControlTextarea1" name="textoComentario" rows="3"></textarea>
+                </div>
+    
+                <input type="submit" value="Enviar" class="btn btn-primary w-100">
+              </form>
+            </div>
+
+            <div class="footer__item">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente accusamus perferendis odio ipsum quod quia eum porro, doloremque aut autem non minus eius vel ratione veniam ad possimus cumque neque?</p>
+            </div>
           </footer>
 
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/55467e18d9.js" crossorigin="anonymous"></script>
   </body>
 </html>

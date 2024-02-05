@@ -7,7 +7,8 @@
     <title>NPR - Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="shortcut icon" href="img/icons/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/login.css">
   </head>
   <body class="background">
 
@@ -29,18 +30,22 @@
 
             <li class="nav-item">
                 <a class="nav-link " aria-current="page" href="/">Home</a>
+                <div class="line"></div>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link " href="/mapa">Mapa</a>
+                <div class="line"></div>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link active " href="/login">Login</a>
+                <div class="line"></div>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link " href="/infoPonto">Pontos de coleta</a>
+                <div class="line"></div>
             </li>
 
             </ul>
@@ -55,8 +60,8 @@
 
 
 
-            <form action="/verificaLogin" method="post" class="container p-5 rounded loginForm">
-                <h2 class="text-center">Login</h2>
+            <form action="/verificaLogin" method="post" class="p-5 rounded loginForm">
+                <h2 class="text-center subtitulo">Login</h2>
                 <div class="form-floating mb-3">
                     <input type="email" class="form-control" id="floatingInput" placeholder="Coloque seu email" name="emailLogin" required value="<%=emailLogin%>">
                     <label for="floatingInput">Coloque seu email</label>
@@ -84,7 +89,7 @@
                 }%>
              
     
-            <input type="submit" value="Entrar" class="btn btn-primary btn-md">
+            <input type="submit" value="Entrar" class="btn btn-npr">
             
             
     

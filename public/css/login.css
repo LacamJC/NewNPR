@@ -1,0 +1,47 @@
+
+:root 
+{
+    --cor1: #5cb85c;
+
+    --preto: #000000;
+    --cinza: #333333;
+}
+
+form 
+{
+    /* background-color: rgba(102, 51, 153, 0.233); */
+    border: 1px solid black;
+    margin: auto;
+    margin-top: 50px;
+    max-width: 500px;
+
+}
+
+h2
+{
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+
+.btn-npr
+{
+    height: 41px;
+    background-color: var(--cor1);
+    color: rgb(245, 245, 245);
+    font-weight: bold;
+    width: 80%;
+    display: flex;
+    justify-content: ali;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+
+    transition: all 0.5s ease;
+}
+
+.btn-npr:hover 
+{
+    background-color: #5bd85b;
+    color: white;
+    transform: translateX(2px) translateY(2px);
+}
