@@ -11,7 +11,7 @@
   </head>
   <body>
 <!--BARRA DE NAVEGAÇÃO-->
-          <nav class="navbar navbar-expand-lg bg-body-tertiary bg-warning"> 
+          <nav class="navbar navbar-expand-lg bg-body-tertiary bg-warning" role="navigation"> 
             <div class="container-fluid" role="navigation">
               <a class="navbar-brand" href="/">
                 <img src="img/logotipo.svg" alt="Logotipo NPR" width="50" height="50" style="    transform: scale(2.5);
@@ -27,22 +27,22 @@
                 <ul class="navbar-nav">
 
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    <a class="nav-link active" aria-current="page" href="/" role="link">Home</a>
                     <div class="line line__active"></div>
                   </li>
 
                   <li class="nav-item">
-                    <a class="nav-link" href="/mapa">Mapa</a>
+                    <a class="nav-link" href="/mapa" role="link">Mapa</a>
                      <div class="line"></div>
                   </li>
 
                   <li class="nav-item">
-                    <a class="nav-link" href="/login">Login</a>
+                    <a class="nav-link" href="/login" role="link">Login</a>
                      <div class="line"></div>
                   </li>
 
                   <li class="nav-item">
-                    <a class="nav-link" href="/infoPonto">Pontos de coleta</a>
+                    <a class="nav-link" href="/infoPonto" role="link">Pontos de coleta</a>
                      <div class="line"></div>
                   </li>
 
@@ -54,7 +54,7 @@
 
           </nav>
 
-          <main class="container-md bg-dager pm-5" style=" padding: 0px;">     
+          <main class="container-md bg-dager pm-5" style=" padding: 0px;" role="main">     
       
             <article class=" row  m-auto w-100 p-3 apresentacao" id="">
               <span class="alert alert-warning">
@@ -66,22 +66,22 @@
                     <p class="paragrafo">Nós, da NPR, estamos empenhados em contribuir para o combate ao descarte irregular de resíduos em nossa cidade. Oferecemos pontos de coleta estrategicamente localizados, um mapa informativo que destaca esses pontos e uma ampla quantidade de informações sobre práticas sustentáveis. Acreditamos que, juntos, podemos fazer a diferença e ajudar a preservar o meio ambiente.</p>
                 </section>
 
-                <img src="img/logotipo.svg" alt="" class="col col-2 rounded mx-auto d-block banner">
+                <img src="img/logotipo.svg" alt="Imagem de logotipo NPR" class="col col-2 rounded mx-auto d-block banner" role="img">
               </article>
 
-            <article class=" p-3 m-auto w-100 row funcoes"> 
+            <article class=" p-3 m-auto w-100 row funcoes" role="banner"> 
               <section class=" text-center  mx-auto col col-12 col-md-6 art">
                 <h3 class="subtitulo">Nosso Mapa</h3>
-                <img src="img/caminhao.png" alt="" class="banner">
+                <img src="img/caminhao.png" alt="Imagem vetorizada em forma de icone para um caminhao de reciclagem" class="banner" role="img">
                 <p class="paragrafo">Explore nosso mapa de Pontos Oficiais, onde você encontrará informações sobre todos os locais ativos atualmente. Descubra a localização exata de cada ponto e o tipo específico de coleta que eles oferecem.</p>
-                <a href="/mapa" class="btn btn-npr">Ir para mapa</a>
+                <a href="/mapa" class="btn btn-npr" role="button">Ir para mapa</a>
               </section>
 
               <section class="text-center mx-auto col col-6 art" style="min-width: 300px;">
                 <h3 class="subtitulo">Faça cadastro</h3>
-                <img src="img/reciclagem.png" alt="" class="banner">
+                <img src="img/reciclagem.png" alt="Imagem vetorizada em forma 2d de duas pessoas reciclando lixo" class="banner" role="img">
                 <p class="paragrafo">Se você deseja contribuir enviando pontos de coleta para a análise, basta se cadastrar no nosso sistema. O processo é rápido !</p>
-                <a href="/cadastroUsuario" class="btn btn-npr">Fazer cadastro</a>
+                <a href="/cadastroUsuario" class="btn btn-npr" role="button">Fazer cadastro</a>
               </section>
             </article>
 
@@ -89,66 +89,24 @@
       
         </main>
 
-        <!-- 
-            MODAL
-         -->
-
-  
- 
-        <!-- <footer class="mt-5">
-          <form action="/comentar" method="post" class="w-50 m-auto">
-            <div class="mb-3">
-              <label for="exampleFormControlTextarea1" class="form-label">Deixe seu Comentario/Feedback</label>
-              <textarea class="form-control" id="exampleFormControlTextarea1" name="textoComentario" rows="3"></textarea>
-            </div>
-
-            <input type="submit" value="Enviar" class="btn btn-primary w-50">
-          </form>
-            <nav class="container text-center ">
-                <ul class="list-group list-group-flush ">
-                    <li class="list-group-item">
-                        <a href="https://www.flaticon.com/br/icones-gratis/enviar" title="enviar ícones" target="_blank">Atribuição - Enviar ícones criados por Freepik - Flaticon</a>
-                    </li>
-                    <li class="list-group-item">Email para contato: npr.contato@gmail.com</li>
-
-                    <li class="list-group-item">Email para dúvidas: npr.duvidas@gmail.com</li>
-                    
-                    <li class="list-group-item">Redes Sociais</li>
-            
-                    <li class="list-group-item">
-                        <a href="#" target="_blank" style="text-decoration: none;">
-                            <img src="img/icons/facebook.png" alt="" id="icon" width="50px">
-                        </a>
-                        <a href="#" target="_blank" style="text-decoration: none;">
-                            <img src="img/icons/twitter.png" alt="" id="" width="50px">
-                        </a>
-                        <a href="https://www.instagram.com/n.p.r.brasilsp/" target="_blank" style="text-decoration: none;">
-                            <img src="img/icons/instagram (2).png" alt="" id="" width="50px">
-                        </a>
-                    </li>
-         
-                </ul>
-            </nav>
-          </footer> -->
-
-          <footer>
+          <footer role="complementary">
             <div class="redes--sociais footer__item">
               <h3>Nossas redes</h3>
               <ul>
-                <a href="#">
+                <a href="#" role="link">
                   <li><i class="fa-brands fa-twitter"></i> Twitter</li>
                 </a>
-                <a href="#">
+                <a href="#" role="link">
                   <li><i class="fa-brands fa-instagram"></i> Instagram</li>
                 </a>
-                <a href="#">
+                <a href="#" role="link">
                   <li><i class="fa-brands fa-facebook"></i> Facebook</li>
                 </a>
               </ul>
             </div>
 
             <div class="comentario footer__item">
-              <form action="/comentar" method="post" class="m-auto">
+              <form action="/comentar" method="post" class="m-auto" role="form">
                 <div class="mb-3">
                   <label for="exampleFormControlTextarea1" class="form-label">Deixe seu Comentario/Feedback</label>
                   <textarea class="form-control" id="exampleFormControlTextarea1" name="textoComentario" rows="3"></textarea>
