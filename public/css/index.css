@@ -87,7 +87,15 @@
     font-style: normal;
     color: var(--cinza);
     /* background-color: rgba(255, 0, 0, 0.486); */
+    text-align: start;
+    min-height: 144px;
     font-size: 1.2em;
+}
+
+.art 
+{
+    /* background-color: blue; */
+    padding: 0px 10px !important;
 }
 
 .banner
