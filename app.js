@@ -57,10 +57,13 @@ app.post('/comentar', function(req,res) {
         bd_comentarios.create({ // Criando coluna no banco de dados
             texto_comentario : req.body.textoComentario
         })
-        res.send("Comentario enviado com sucesso, <a href='/'>clique aqui para voltar</>")
+        res.redirect('/')
+        
+
     }else // Se estiver vazio
     {
-        res.render('../views/index.ejs')
+        console.error(redText("Comentario inválido"))
+        res.redirect('/')
     }
 })
 /* */
