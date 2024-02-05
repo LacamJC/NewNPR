@@ -193,7 +193,7 @@ app.post('/cadastrarPonto', function(req,res) {
     var senhaUsuario = req.body.textPassword
     var nomeInstituicao = req.body.textInstituicao
     var cep = req.body.textCep
-    var foto = req.body.textFoto
+    var foto =  req.file ? req.file.filename : 'default.jpeg'
     var descricao = req.body.textDescricao
     var tipo = []
     

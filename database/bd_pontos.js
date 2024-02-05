@@ -40,7 +40,7 @@ const bd_pontos = database.define('bd_pontos', {
 
     foto:
     {
-        type:Sequelize.TEXT
+        type:Sequelize.STRING
     },
 
     descricao:

@@ -49,7 +49,7 @@
 
     </nav>
     <%var controle = 0 %>
-    <form action="/cadastrarPonto" method="post" class="container  m-auto border border-secondary p-4 bg-light mx-auto my-4" style="max-width: 750px; ">
+    <form action="/cadastrarPonto" method="post" class="container  m-auto border border-secondary p-4 bg-light mx-auto my-4" style="max-width: 750px; " enctype="multipart/form-data">
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Email</label>
         <input type="email" class="form-control" id="exampleInputEmail1" name="textEmail" aria-describedby="emailHelp" required>
@@ -98,10 +98,10 @@
 
       <div class="mb-3">
         <label for="formFile" class="form-label">
-          Selecione uma foto para o perfil<span class="bg-warning p-1 rounded">(Utilize o link de uma imagem)</span>
+          Selecione uma foto para o perfil<span class="bg-warning p-1 rounded"></span>
         </label>
         
-        <input type="text" name="textFoto" id="" class="form-control">
+        <input type="file" name="foto" id="" class="form-control">
       </div>
 
       <div class="mb-3">
