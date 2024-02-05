@@ -6,8 +6,8 @@
         <!-- <meta http-equiv="refresh" content="5"> -->
     <title>NPR - Pontos de coleta</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
-
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/infoPonto.css">
     <link rel="shortcut icon" href="img/icons/favicon.png" type="image/x-icon">
   </head>
   <body>
@@ -30,18 +30,22 @@
 
             <li class="nav-item">
               <a class="nav-link" aria-current="page" href="/">Home</a>
+                 <div class="line"></div>
             </li>
 
             <li class="nav-item">
               <a class="nav-link" href="/mapa">Mapa</a>
+                 <div class="line"></div>
             </li>
 
             <li class="nav-item">
               <a class="nav-link" href="/login">Login</a>
+                 <div class="line"></div>
             </li>
 
             <li class="nav-item">
               <a class="nav-link active" href="/infoPonto">Pontos de coleta</a>
+                 <div class="line"></div>
             </li>
 
           </ul>
@@ -54,15 +58,13 @@
 
 
     <main class="container-md bg-dager p-0 infoPonto" style="min-height: 900px;">
-      <article class="row pb-3 w-100 mx-auto info">
-        <section class="col col-12 col-md-6 text-center ">
-          <h2>Pontos de coleta</h2>
-        
-          <p>São locais devidamente cadastrados e verificados, destinados à reciclagem. São espaços designados para o descarte adequado de resíduos recicláveis, tais como garrafas e papéis, os quais são coletados periodicamente. Essa prática visa evitar o descarte inadequado de lixo em nossa cidade.</p>
-          <img src="img/caixaReciclagem.png" alt="" style="width: 25%;" class="mb-3"> <br>
-          <a href="/cadastroPonto" class="btn btn-success">Cadastrar Ponto</a>
-        </section>
-        <section class="col col-12  col-md-6 text-center mx-auto" style="display: flex; justify-content: center; align-items: center;">
+      <h1 class="fonte--destaque text-center mt-5">O que são nossos pontos de coleta ?</h1>
+      <article class=" info">
+     
+          <p class="paragrafo">São locais devidamente cadastrados e verificados, destinados à reciclagem. São espaços designados para o descarte adequado de resíduos recicláveis, tais como garrafas e papéis, os quais são coletados periodicamente. Essa prática visa evitar o descarte inadequado de lixo em nossa cidade.</p>
+          <!-- <img src="img/caixaReciclagem.png" alt="" style="width: 25%;" class="mb-3"> <br> -->
+          <a href="/cadastroPonto" class="btn btn-npr btn-npr-lg">Cadastrar Ponto</a>
+        <!-- <section class="col col-12  col-md-6 text-center mx-auto" style="display: flex; justify-content: center; align-items: center;">
           <div class="card mx-auto my-2" style="max-width: 18rem;">
             <div class="card-body">
               <h5 class="card-title">Pontos em análise</h5>
@@ -72,7 +74,7 @@
               <a href="/listaPontos" class="btn btn-success">Ver Pontos em análise</a>
             </div>
           </div>
-        </section>
+        </section> -->
       </article>
 
       <article class="text-center py-3 row listas w-100 m-auto">
@@ -83,13 +85,13 @@
         </ul> -->
 
         <section class="col-12 col-md-6">
-          <h3>Pontos de Coleta Cadastrados</h3>
-          <p>São pontos oficialmente cadastrados em nosso mapa caso queira ver quais <a href="/mapa">são clique aqui !</a></p>
+          <h2 class="subtitulo">Pontos de Coleta Cadastrados</h2 class="subtitulo">
+          <p class="paragrafo">São pontos oficialmente cadastrados em nosso mapa caso queira ver quais <a href="/mapa">são clique aqui !</a></p>
         </section>
 
         <section class="col-12 col-md-6">
-          <h3>Pontos de Coleta em análise</h3>
-          <p>São pontos enviados por usuarios, que estão em fase de analise por nossos adminstrados que após decisão dos mesmos serão inseridos no mapa manualmente. <a href="/listaPontos">Clique aqui para ver todos os pontos em análise</a></p>
+          <h2 class="subtitulo">Pontos de Coleta em análise</h2 class="subtitulo">
+          <p class="paragrafo">São pontos enviados por usuarios, que estão em fase de analise por nossos adminstrados que após decisão dos mesmos serão inseridos no mapa manualmente. <a href="/listaPontos">Clique aqui para ver todos os pontos em análise</a></p>
           <img src="img/caminhao.png" alt="" style="width:25%;">
         </section>
       </article>
