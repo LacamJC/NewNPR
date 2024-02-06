@@ -48,7 +48,7 @@
 - Sequelize
 - Bootstrap
 
-## Screenshots
+## Screenshots ( versão antiga)
 | Página Inicial no deskptop | Página de login no desktop | Página de cadastro no desktop | Página Inicial (Mobile) |
 |:--------------:|:--------------:|:--------------:|:------------------------:|
 | ![Imagem1](screenshots/captura_npr.png) | ![Imagem2](screenshots/captura_npr2.png) | ![Imagem3](screenshots/captura_npr3.png) | ![Imagem4](screenshots/captura_npr4.png) |
