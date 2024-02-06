@@ -10,6 +10,7 @@
 - [Tecnologias](#tecnologias)
 - [Screenshots](#screenshots)
 - [Como Rodar o Projeto](#como-rodar-o-projeto)
+- [Atualizações](#Atualizações)
 
 
 ## Sobre
@@ -54,20 +55,15 @@ git clone https://github.com/LacamJC/NewNPR.git
 cd NewNPR 
 ```
 
-### Instale as Dependências (se necessário)
+### Certifique-se de ter o node instalado
 ```bash
-npm install 
-
-npm install axios
-
-npm install ejs 
-
-npm install sequelize
-
-npm install mysql2
+   sudo apt-get update
+   sudo apt-get install nodejs
 ```
 
-Após isso acesse o arquivo conexao.js dentro do diretorio database que seria 
+Caso seu sistema seja Windows acesse o [site oficial do node](https://nodejs.org/en) e procure a documentação
+
+### Após isso acesse o arquivo conexao.js dentro do diretorio database que seria 
 ```bash
 NewNPR/database/conexao.js
 ```
@@ -90,10 +86,23 @@ Após isso execute o comando para inicializar o Projeto
 node app
 ```
 
-Vá para o navegador e entre em seu localhost acessando a porta 3000
+Vá para o navegador e entre em seu localhost acessando a porta 3000 (caso queira alterar a porta de entrada apenas procure a constante port no arquivo app.js)
 ```
 http://localhost:3000/
 ```
 
 
+# Atualizações
 
+## 05/02/2024
+
+### Alteraçoes significativas no estilo das páginas e novas funçoes !
+Hoje, acordei com uma grande inspiração para mexer, depois de semanas sem olhar para este projeto. Consegui fazer alterações significativas no CSS da maioria das páginas, tornando-as mais agradáveis à vista!
+
+Também aproveitei que aprendi como fazer upload de imagens em outro projeto. Acabei integrando a função de o próprio usuário poder escolher a foto de perfil e também do ponto de coleta.
+
+Além disso, mudei o tamanho das fontes para REM em vez de PX por questões de responsividade. Achei interessante, porém, ainda tenho que alterar para aumentá-las um pouco.
+
+| Nova home | Alteração no formulário de cadastro | Página sobre os pontos de coleta |
+|:--------------:|:--------------:|:--------------:|
+| ![Imagem1](screenshots/att01.png) | ![Imagem2](screenshots/att02.png) | ![Imagem3](screenshots/att03.png) |
