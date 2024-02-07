@@ -4,10 +4,10 @@
 
 const Sequelize = require('sequelize')
 
-const sequelize = new Sequelize("railway","root","a6H1CB4Ec-6AgEae5FdeBC5FgH46542A", {
+const sequelize = new Sequelize("railway","root","EaF35be-d14G121fAeHCb4CFc25a-cGf", {
     dialect: "mysql",
-    host: "roundhouse.proxy.rlwy.net",
-    port: 38970
+    host: "viaduct.proxy.rlwy.net",
+    port: 22039
 })
 
 module.exports = sequelize
