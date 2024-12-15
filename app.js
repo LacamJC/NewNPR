@@ -65,6 +65,8 @@ app.post('/comentar', function(req,res) {
         console.error(redText("Comentario inválido"))
         res.redirect('/')
     }
+
+    
 })
 /* */
 

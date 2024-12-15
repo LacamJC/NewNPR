@@ -1,0 +1,36 @@
+/* 16 px */
+/* 48px */
+/* 32px */
+/* 16px */
+.first__col {
+  /* background-color: rgba(0, 0, 255, 0.425); */
+  border: 1px solid rgba(172, 172, 172, 0.459);
+  border-right: none;
+}
+.first__col .profile__picture {
+  overflow: hidden;
+  border-radius: 50%;
+  width: 220px;
+  height: 220px;
+  /* background-color: red; */
+  margin: 20px auto;
+  border: 1px solid rgba(172, 172, 172, 0.459);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.second__col {
+  border: 1px solid rgba(172, 172, 172, 0.459);
+  font-family: "Roboto", sans-serif;
+  color: #333333;
+  font-size: 100%;
+}
+.second__col .alt_data {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}/*# sourceMappingURL=perfil.css.map */

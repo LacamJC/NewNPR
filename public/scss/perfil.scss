@@ -1,0 +1,43 @@
+@import '_variaveis.scss';
+
+
+.first__col
+{
+    /* background-color: rgba(0, 0, 255, 0.425); */
+    border: 1px solid rgba(172, 172, 172, 0.459);
+    border-right: none;
+
+    .profile__picture
+    {
+        overflow: hidden;
+        border-radius: 50%;
+        width: 220px;
+        height: 220px;
+        /* background-color: red; */
+        margin: 20px auto;
+        border: 1px solid rgba(172, 172, 172, 0.459);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        object-fit: contain;
+    }
+}
+
+
+.second__col
+{
+    border: 1px solid rgba(172, 172, 172, 0.459);
+    font-family: $font-family;
+    color: $font-color;
+    font-size: $font-size;
+    // background-color: rgba(255, 255, 0, 0.349);
+    .alt_data
+    {
+        // background-color: rgba(255, 0, 0, 0.459);
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+}
+

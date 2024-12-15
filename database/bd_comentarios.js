@@ -13,6 +13,6 @@ const bd_comentarios = database.define('bd_comentarios', {
     }
 })
 
-bd_comentarios.sync({force:true})
-
+bd_comentarios.sync({force:true}) 
+ 
 module.exports = bd_comentarios
